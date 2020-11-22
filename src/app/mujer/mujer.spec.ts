@@ -98,6 +98,7 @@ it('Should imc 40 / (156/100)^2 = 16.44 imc', () => {
 describe('Mujer - Text - unit tests', () => {
   it('Should print "Usted tiene bajo peso" when edad=5 and IMC=10', () => {
     //Arrangin
+    //test
     let result ='';
     //Act
     result = calcular(5,10);
