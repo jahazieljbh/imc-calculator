@@ -2,135 +2,135 @@ import {calcularIMC} from './mujer';
 import {diagnosticoMujer} from './mujer';
 
 describe('Mujer - IMC - unit tests', () => {
-  it('Should imc 75 / (170/100)^2 = 25.95 imc ', () => {
+  it('Should calculate IMC of 46kg y 163cm = 17.31 imc ', () => {
     //Arrangin
     let result =0;
     //Act
-    result = calcularIMC(75.0,170.0);
+    result = calcularIMC(46,163);
     //Assert
-    expect(result).toBe(25.95);
+    expect(result).toBe(17.31);
  });
 
- it('Should imc 55 / (160/100)^2 = 21.48 imc', () => {
+ it('Should calculate IMC of 43kg y 145cm = 20.45 imc', () => {
    //Arrangin
    let result =0;
    //Act
-   result = calcularIMC(55,160);
+   result = calcularIMC(43,145);
    //Assert
-   expect(result).toBe(21.48);
+   expect(result).toBe(20.45);
  });
  
- it('Should imc 52 / (169/100)^2 = 18.20 imc', () => {
+ it('Should calculate IMC of 50kg y 149cm = 22.52 imc', () => {
    //Arrangin
    let result =0;
    //Act
-   result = calcularIMC(52,169);
+   result = calcularIMC(50,149);
    //Assert
-   expect(result).toBe(18.21);
+   expect(result).toBe(22.52);
  });
 
- it('Should imc 50 / (180/100)^2 = 15.42 imc', () => {
+ it('Should calculate IMC of 80kg y 167cm = 28.69 imc', () => {
   //Arrangin
   let result =0;
   //Act
-  result = calcularIMC(50,180);
+  result = calcularIMC(80,167);
   //Assert
-  expect(result).toBe(15.43);
+  expect(result).toBe(28.69);
 });
 
-it('Should imc 90 / (160/100)^2 = 35.16 imc', () => {
+it('Should calculate IMC of 47kg y 163cm = 17.69 imc', () => {
   //Arrangin
   let result =0;
   //Act
-  result = calcularIMC(90,160);
+  result = calcularIMC(47,163);
   //Assert
-  expect(result).toBe(35.16);
+  expect(result).toBe(17.69);
 });
 
-it('Should imc 40 / (156/100)^2 = 16.44 imc', () => {
+it('Should calculate IMC of 56kg y 160cm = 21.87 imc', () => {
     //Arrangin
     let result =0;
     //Act
-    result = calcularIMC(40,156);
+    result = calcularIMC(56,160);
     //Assert
-    expect(result).toBe(16.44);
+    expect(result).toBe(21.87);
   });
 
-  it('Should imc 77 / (177/100)^2 = 24.58 imc', () => {
+  it('Should calculate IMC of 75kg y 170cm = 25.95 imc', () => {
     //Arrangin
     let result =0;
     //Act
-    result = calcularIMC(77,177);
+    result = calcularIMC(75,170);
     //Assert
-    expect(result).toBe(24.58);
+    expect(result).toBe(25.95);
   });
 
-  it('Should imc 100 / (187/100)^2 = 28.6 imc', () => {
+  it('Should calculate IMC of 100kg y 180cm = 30.86 imc', () => {
     //Arrangin
     let result =0;
     //Act
-    result = calcularIMC(100,187);
+    result = calcularIMC(100,180);
     //Assert
-    expect(result).toBe(28.6);
+    expect(result).toBe(30.86);
   });  
 
-  it('Should imc 45 / (149/100)^2 = 20.27 imc', () => {
+  it('Should calculate IMC of 40kg y 139cm = 20.70 imc', () => {
     //Arrangin
     let result =0;
     //Act
-    result = calcularIMC(45,149);
+    result = calcularIMC(40,139);
     //Assert
-    expect(result).toBe(20.27);
+    expect(result).toBe(20.70);
   }); 
 
-  it('Should imc 110 / (195/100)^2 = 28.93 imc', () => {
+  it('Should calculate IMC of 55kg y 148cm = 25.11 imc', () => {
     //Arrangin
     let result =0;
     //Act
-    result = calcularIMC(110,195);
+    result = calcularIMC(55,148);
     //Assert
-    expect(result).toBe(28.93);
+    expect(result).toBe(25.11);
   }); 
 
 
 });
 
 describe('Mujer - Text - unit tests', () => {
-  it('Should print "Usted tiene bajo peso" when edad=5 and IMC=10', () => {
+  it('Should print "Usted tiene bajo peso" when edad=10 and IMC=13.12', () => {
     //Arrangin
     //test
     let result ='';
     //Act
-    result = diagnosticoMujer(5,10);
+    result = diagnosticoMujer(10,13.12);
     //Assert
     expect(result).toBe("Usted tiene bajo peso");
  });
 
- it('Should print "Usted tiene obesidad tipo I" when edad=21 and IMC=32', () => {
+ it('Should print "Usted tiene obesidad" when edad=19 and IMC=32', () => {
   //Arrangin
   let result ='';
   //Act
-  result = diagnosticoMujer(21,32);
+  result = diagnosticoMujer(19,32);
   //Assert
-  expect(result).toBe("Usted tiene obesidad tipo I");
+  expect(result).toBe("Usted tiene obesidad");
 });
 
-it('Should print "Usted tiene un peso normal" when edad=15 and IMC=21', () => {
+it('Should print "Usted tiene un peso normal" when edad=15 and IMC=18', () => {
   //Arrangin
   let result ='';
   //Act
-  result = diagnosticoMujer(15,21);
+  result = diagnosticoMujer(15,18);
   //Assert
   expect(result).toBe("Usted tiene un peso normal");
 });
 
-it('Should print "Usted tiene un peso normal" when edad=10 and IMC=17', () => {
+it('Should print "Usted tiene sobrepeso" when edad=12 and IMC=24', () => {
   //Arrangin
   let result ='';
   //Act
-  result = diagnosticoMujer(10,17);
+  result = diagnosticoMujer(12,24);
   //Assert
-  expect(result).toBe("Usted tiene un peso normal");
+  expect(result).toBe("Usted tiene sobrepeso");
 });
 
 it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => {
@@ -151,20 +151,20 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     expect(result).toBe("Usted tiene obesidad tipo III");
   });
 
-  it('Should print "Usted tiene sobrepeso" when edad=46 and IMC=27', () => {
+  it('Should print "Usted tiene obesidad tipo III" when edad=43 and IMC=42', () => {
     //Arrangin
     let result ='';
     //Act
-    result = diagnosticoMujer(46,27);
+    result = diagnosticoMujer(43,42);
     //Assert
-    expect(result).toBe("Usted tiene sobrepeso");
+    expect(result).toBe("Usted tiene obesidad tipo III");
   });
 
-  it('Should print "Usted tiene obesidad" when edad=13 and IMC=32', () => {
+  it('Should print "Usted tiene obesidad" when edad=13 and IMC=30', () => {
     //Arrangin
     let result ='';
     //Act
-    result = diagnosticoMujer(13,32);
+    result = diagnosticoMujer(13,30);
     //Assert
     expect(result).toBe("Usted tiene obesidad");
   });
