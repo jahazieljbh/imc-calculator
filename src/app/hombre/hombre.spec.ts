@@ -2,7 +2,7 @@ import {calcularIMC} from './hombre';
 import {diagnosticoHombre} from './hombre';
 
 describe('Hombre - IMC - unit tests', () => {
-  it('Should imc 75 / (170/100)^2 = 25.95 imc ', () => {
+  it('Should calculate IMC of 75kg y 170cm = 25.95 imc ', () => {
     //Arrangin
     let result =0;
     //Act
@@ -11,7 +11,7 @@ describe('Hombre - IMC - unit tests', () => {
     expect(result).toBe(25.95);
  });
 
- it('Should imc 55 / (160/100)^2 = 21.48 imc', () => {
+ it('Should calculate IMC of 55kg y 160cm = 21.48 imc', () => {
    //Arrangin
    let result =0;
    //Act
@@ -20,7 +20,7 @@ describe('Hombre - IMC - unit tests', () => {
    expect(result).toBe(21.48);
  });
  
- it('Should imc 52 / (169/100)^2 = 18.20 imc', () => {
+ it('Should calculate IMC of 52kg y 169cm = 18.20 imc', () => {
    //Arrangin
    let result =0;
    //Act
@@ -29,7 +29,7 @@ describe('Hombre - IMC - unit tests', () => {
    expect(result).toBe(18.21);
  });
 
- it('Should imc 50 / (180/100)^2 = 15.42 imc', () => {
+ it('Should calculate IMC of 50kg y 180cm = 15.42 imc', () => {
   //Arrangin
   let result =0;
   //Act
@@ -38,7 +38,7 @@ describe('Hombre - IMC - unit tests', () => {
   expect(result).toBe(15.43);
 });
 
-it('Should imc 90 / (160/100)^2 = 35.16 imc', () => {
+it('Should calculate IMC of 90kg y 160cm = 35.16 imc', () => {
   //Arrangin
   let result =0;
   //Act
@@ -47,7 +47,7 @@ it('Should imc 90 / (160/100)^2 = 35.16 imc', () => {
   expect(result).toBe(35.16);
 });
 
-it('Should imc 40 / (156/100)^2 = 16.44 imc', () => {
+it('Should calculate IMC of 40kg y 156cm = 16.44 imc', () => {
     //Arrangin
     let result =0;
     //Act
@@ -56,7 +56,7 @@ it('Should imc 40 / (156/100)^2 = 16.44 imc', () => {
     expect(result).toBe(16.44);
   });
 
-  it('Should imc 77 / (177/100)^2 = 24.58 imc', () => {
+  it('Should calculate IMC of 77kg y 177cm = 24.58 imc', () => {
     //Arrangin
     let result =0;
     //Act
@@ -65,7 +65,7 @@ it('Should imc 40 / (156/100)^2 = 16.44 imc', () => {
     expect(result).toBe(24.58);
   });
 
-  it('Should imc 100 / (187/100)^2 = 28.6 imc', () => {
+  it('Should calculate IMC of 100kg y 187cm = 28.6 imc', () => {
     //Arrangin
     let result =0;
     //Act
@@ -74,7 +74,7 @@ it('Should imc 40 / (156/100)^2 = 16.44 imc', () => {
     expect(result).toBe(28.6);
   });  
 
-  it('Should imc 45 / (149/100)^2 = 20.27 imc', () => {
+  it('Should calculate IMC of 45kg y 149cm = 20.27 imc', () => {
     //Arrangin
     let result =0;
     //Act
@@ -83,7 +83,7 @@ it('Should imc 40 / (156/100)^2 = 16.44 imc', () => {
     expect(result).toBe(20.27);
   }); 
 
-  it('Should imc 110 / (195/100)^2 = 28.93 imc', () => {
+  it('Should calculate IMC of 110kg y 195cm = 28.93 imc', () => {
     //Arrangin
     let result =0;
     //Act
