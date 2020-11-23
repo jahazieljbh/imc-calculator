@@ -1,5 +1,9 @@
 # ImcCalculator
 
+**`Documentation`** |
+------------------- |
+[![Documentation](https://img.shields.io/badge/DOC-Requerimientos-brightgreen)](https://github.com/jahazieljbh/documentoIMC/blob/master/requerimientos.pdf) |
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
 ## Development server
