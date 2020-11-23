@@ -5,7 +5,7 @@ export function calcularIMC(peso,estatura){
     IMC= peso / mult;
     return parseFloat(IMC.toFixed(2));;
   }
-  export function calcular(edad,IMC){ 
+  export function diagnosticoMujer(edad,IMC){ 
     let resul='';
   
     if(edad <=10){

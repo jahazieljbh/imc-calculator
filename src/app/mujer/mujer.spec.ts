@@ -1,5 +1,5 @@
 import {calcularIMC} from './mujer';
-import {calcular} from './mujer';
+import {diagnosticoMujer} from './mujer';
 
 describe('Mujer - IMC - unit tests', () => {
   it('Should imc 75 / (170/100)^2 = 25.95 imc ', () => {
@@ -101,7 +101,7 @@ describe('Mujer - Text - unit tests', () => {
     //test
     let result ='';
     //Act
-    result = calcular(5,10);
+    result = diagnosticoMujer(5,10);
     //Assert
     expect(result).toBe("Usted tiene bajo peso");
  });
@@ -110,7 +110,7 @@ describe('Mujer - Text - unit tests', () => {
   //Arrangin
   let result ='';
   //Act
-  result = calcular(21,32);
+  result = diagnosticoMujer(21,32);
   //Assert
   expect(result).toBe("Usted tiene obesidad tipo I");
 });
@@ -119,7 +119,7 @@ it('Should print "Usted tiene un peso normal" when edad=15 and IMC=21', () => {
   //Arrangin
   let result ='';
   //Act
-  result = calcular(15,21);
+  result = diagnosticoMujer(15,21);
   //Assert
   expect(result).toBe("Usted tiene un peso normal");
 });
@@ -128,7 +128,7 @@ it('Should print "Usted tiene un peso normal" when edad=10 and IMC=17', () => {
   //Arrangin
   let result ='';
   //Act
-  result = calcular(10,17);
+  result = diagnosticoMujer(10,17);
   //Assert
   expect(result).toBe("Usted tiene un peso normal");
 });
@@ -137,7 +137,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(20,37);
+    result = diagnosticoMujer(20,37);
     //Assert
     expect(result).toBe("Usted tiene obesidad tipo II");
   });
@@ -146,7 +146,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(30,45);
+    result = diagnosticoMujer(30,45);
     //Assert
     expect(result).toBe("Usted tiene obesidad tipo III");
   });
@@ -155,7 +155,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(46,27);
+    result = diagnosticoMujer(46,27);
     //Assert
     expect(result).toBe("Usted tiene sobrepeso");
   });
@@ -164,7 +164,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(13,32);
+    result = diagnosticoMujer(13,32);
     //Assert
     expect(result).toBe("Usted tiene obesidad");
   });
@@ -173,7 +173,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(55,22);
+    result = diagnosticoMujer(55,22);
     //Assert
     expect(result).toBe("Usted tiene un peso normal");
   });
@@ -182,7 +182,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(62,21.3);
+    result = diagnosticoMujer(62,21.3);
     //Assert
     expect(result).toBe("Usted tiene un peso normal");
   });
