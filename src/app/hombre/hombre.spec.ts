@@ -1,5 +1,5 @@
 import {calcularIMC} from './hombre';
-import {calcular} from './hombre';
+import {diagnosticoHombre} from './hombre';
 
 describe('Hombre - IMC - unit tests', () => {
   it('Should imc 75 / (170/100)^2 = 25.95 imc ', () => {
@@ -100,7 +100,7 @@ describe('Hombre - Text - unit tests', () => {
     //Arrangin
     let result ='';
     //Act
-    result = calcular(5,10);
+    result = diagnosticoHombre(5,10);
     //Assert
     expect(result).toBe("Usted tiene bajo peso");
  });
@@ -109,7 +109,7 @@ describe('Hombre - Text - unit tests', () => {
   //Arrangin
   let result ='';
   //Act
-  result = calcular(21,32);
+  result = diagnosticoHombre(21,32);
   //Assert
   expect(result).toBe("Usted tiene obesidad tipo I");
 });
@@ -118,7 +118,7 @@ it('Should print "Usted tiene un peso normal" when edad=15 and IMC=21', () => {
   //Arrangin
   let result ='';
   //Act
-  result = calcular(15,21);
+  result = diagnosticoHombre(15,21);
   //Assert
   expect(result).toBe("Usted tiene un peso normal");
 });
@@ -127,7 +127,7 @@ it('Should print "Usted tiene un peso normal" when edad=10 and IMC=17', () => {
   //Arrangin
   let result ='';
   //Act
-  result = calcular(10,17);
+  result = diagnosticoHombre(10,17);
   //Assert
   expect(result).toBe("Usted tiene un peso normal");
 });
@@ -136,7 +136,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(20,37);
+    result = diagnosticoHombre(20,37);
     //Assert
     expect(result).toBe("Usted tiene obesidad tipo II");
   });
@@ -145,7 +145,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(30,45);
+    result = diagnosticoHombre(30,45);
     //Assert
     expect(result).toBe("Usted tiene obesidad tipo III");
   });
@@ -154,7 +154,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(46,27);
+    result = diagnosticoHombre(46,27);
     //Assert
     expect(result).toBe("Usted tiene sobrepeso");
   });
@@ -163,7 +163,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(13,32);
+    result = diagnosticoHombre(13,32);
     //Assert
     expect(result).toBe("Usted tiene obesidad");
   });
@@ -172,7 +172,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(55,22);
+    result = diagnosticoHombre(55,22);
     //Assert
     expect(result).toBe("Usted tiene un peso normal");
   });
@@ -181,7 +181,7 @@ it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => 
     //Arrangin
     let result ='';
     //Act
-    result = calcular(62,21.3);
+    result = diagnosticoHombre(62,21.3);
     //Assert
     expect(result).toBe("Usted tiene un peso normal");
   });
