@@ -1,7 +1,4 @@
 body {
-    margin: 0;
-    padding: 0;
-    
     background-size: cover;
     font-family: sans-serif;
     height: 150vh;
@@ -10,10 +7,10 @@ body {
   
 .ui-box {
     width: 550px;
-    height: 1005px;
-    background: rgb(0, 0, 0);
-    color: #fff;
-    top: 50%;
+    height: 1050px;
+    background: paleturquoise;
+    color: black;
+    top: 60%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -40%);
@@ -24,7 +21,7 @@ body {
   
   
 .ui-box h1 {
-    color: #fc0000;
+    color: black;
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
@@ -45,7 +42,7 @@ body {
     background: transparent;
     outline: none;
     height: 30px;
-    color: rgb(255, 187, 0);
+    color: #fff;
     font-size: 16px;
 }
   
@@ -57,15 +54,14 @@ body {
     border-radius: 20px;
     cursor: pointer;
     background: #ffc107;
-    color: #000;
+    color: #fff;
     position: absolute;
-    top: 50%;
 }
   
 .ui-box input[type="submit"]:hover {
     cursor: pointer;
-    background: #ffc107;
-    color: #000;
+    background: rgb(97, 223, 97);
+    color: #fff;
 }
   
 textarea{
