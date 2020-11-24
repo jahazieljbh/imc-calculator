@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/jacielpc/imc-calculator/src/main.ts */"zUnb");
+module.exports = __webpack_require__(/*! /home/jacielpc/Música/imc-calculator/src/main.ts */"zUnb");
 
 
 /***/ }),
