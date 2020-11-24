@@ -9,7 +9,8 @@ describe('UiImcComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UiImcComponent ]
+      declarations: [ UiImcComponent ],
+      imports: [FormsModule]
     })
     .compileComponents();
   });
@@ -35,4 +36,82 @@ describe('UiImcComponent', () => {
     // Assert
     expect(result).toBe('IMC: 17.30\nDiagnostico: Usted tiene bajo peso');
   });
+
+  it('Should add estatura, peso and edad when i click the enviarDatos button ', () => {
+    // Arrange 
+    component.estatura = 159;
+    component.peso = 50;
+    component.edad= 17;
+    component.genero="mujer";
+
+    let enviarDatosButton = fixture.debugElement.query(By.css('.enviarDatos-button'));
+
+    // Act
+    enviarDatosButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe('IMC: 19.78\nDiagnostico: Usted tiene un peso normal');
+
+  });
+
+  it('Should set estatura model through ngModel calculaIMC', async () => {
+    // Arrange 
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const inputElement = fixture.debugElement.query(By.css('input[name="estatura"]')).nativeElement;
+
+    // Act 
+    inputElement.value = 170;
+    inputElement.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    // Assert 
+    expect(component.estatura).toEqual(170);
+  });
+
+  it('Should set peso model through ngModel calculaIMC', async () => {
+    // Arrange 
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const inputElement = fixture.debugElement.query(By.css('input[name="peso"]')).nativeElement;
+
+    // Act 
+    inputElement.value = 60;
+    inputElement.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    // Assert 
+    expect(component.peso).toEqual(60);
+  });
+
+  it('Should set edad model through ngModel calculaIMC', async () => {
+    // Arrange 
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const inputElement = fixture.debugElement.query(By.css('input[name="edad"]')).nativeElement;
+
+    // Act 
+    inputElement.value = 21;
+    inputElement.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    // Assert 
+    expect(component.edad).toEqual(21);
+  });
+
+  it('Should set genero model through ngModel calculaIMC', async () => {
+    // Arrange 
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const inputElement = fixture.debugElement.query(By.css('input[name="genero"]')).nativeElement;
+
+    // Act 
+    inputElement.value = 'hombre';
+    inputElement.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    // Assert 
+    expect(component.genero).toEqual('hombre');
+  });
+  
 });

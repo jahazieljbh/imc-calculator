@@ -9,8 +9,8 @@ body {
   
   
 .ui-box {
-    width: 320px;
-    height: 820px;
+    width: 550px;
+    height: 1005px;
     background: rgb(0, 0, 0);
     color: #fff;
     top: 50%;
@@ -44,19 +44,22 @@ body {
     border-bottom: 1px solid #fff;
     background: transparent;
     outline: none;
-    height: 40px;
+    height: 30px;
     color: rgb(255, 187, 0);
     font-size: 16px;
 }
   
-.ui-box input[type="submit"] {
-    border: none;
-    outline: none;
-    height: 40px;
+.enviarDatos-button input[type="submit"] {
+    height: 100px;
     background: #b80f22;
-    color: #fff;
+    color: rgb(236, 221, 13);
     font-size: 18px;
     border-radius: 20px;
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+    position: absolute;
+    top: 50%;
 }
   
 .ui-box input[type="submit"]:hover {
@@ -66,7 +69,15 @@ body {
 }
   
 textarea{
-    margin : 10;
     text-align: center;
     resize : none;
+}
+.rango{
+    background: url(rango.jpg);
+}
+.hombre{
+    background: url(hombreT.jpg);
+}
+.mujer{
+    background: url(mujerT.jpg);
 }

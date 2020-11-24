@@ -31,10 +31,20 @@
                 placeholder="hombre/mujer">
         </form>
         <form action="../../form-result.php" method="post" target="_blank">
-            <p><input type="submit" (click)="calcularIMC()" value="Enviar datos"></p>
-            <textarea name="textarea" rows="10" readonly cols="30"> {{result}}</textarea>
+            <p><input class="enviarDatos-button" type="submit" (click)="calcularIMC()" value="Enviar datos"></p>
+            <textarea name="textarea" align="center" rows="4" readonly cols="60"> {{result}}</textarea>
         </form>
-
+        <form>
+            <div class="range" align="center">
+                <img src="rango.jpg" width="500px" height="60px" />
+            </div>
+            <div class="hombre" align="center">
+                <img src="hombreT.jpg" width="500px" height="190px" />
+            </div>
+            <div class="mujer" align="center">
+                <img src="mujerT.jpg" width="500px" height="190px" />
+            </div>
+        </form>
     </div>
 
 </body>
