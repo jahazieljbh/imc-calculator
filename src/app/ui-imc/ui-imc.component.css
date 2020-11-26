@@ -2,14 +2,15 @@ body {
     background-size: cover;
     font-family: sans-serif;
     height: 150vh;
+    text-align: center;
 }
   
   
 .ui-box {
     width: 550px;
-    height: 1050px;
-    background: paleturquoise;
-    color: black;
+    height: 900px;
+    background: rgb(1, 3, 3);
+    color: rgb(255, 255, 255);
     top: 60%;
     left: 50%;
     position: absolute;
@@ -21,7 +22,7 @@ body {
   
   
 .ui-box h1 {
-    color: black;
+    color: rgb(255, 255, 255);
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
@@ -33,6 +34,9 @@ body {
 .ui-box input {
     width: 100%;
     margin-bottom: 20px;
+    width: 150px;
+    height: 35px;
+    
 }
   
 .ui-box input[type="number"], .ui-box input[type="text"] {
@@ -56,12 +60,15 @@ body {
     background: #ffc107;
     color: #fff;
     position: absolute;
+    
 }
   
 .ui-box input[type="submit"]:hover {
     cursor: pointer;
     background: rgb(97, 223, 97);
     color: #fff;
+    width: 150px;
+    height: 35px;
 }
   
 textarea{
