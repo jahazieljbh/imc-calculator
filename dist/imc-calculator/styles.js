@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/jacielpc/imc-calculator/src/styles.css */"OmL/");
+module.exports = __webpack_require__(/*! /home/jacielpc/Música/imc-calculator/src/styles.css */"OmL/");
 
 
 /***/ }),
