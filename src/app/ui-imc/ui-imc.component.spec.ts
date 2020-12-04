@@ -114,4 +114,20 @@ describe('UiImcComponent', () => {
     expect(component.genero).toEqual('hombre');
   });
   
+  it('Should add estatura, peso and edad and return INVALIDO when i click the enviarDatos button ', () => {
+    // Arrange 
+    component.estatura = 159;
+    component.peso = 50;
+    component.edad= 17;
+    component.genero="xxxx";
+
+    let enviarDatosButton = fixture.debugElement.query(By.css('.enviarDatos-button'));
+
+    // Act
+    enviarDatosButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe('IMC: 19.78\nDiagnostico: INVALIDO');
+
+  });
 });
