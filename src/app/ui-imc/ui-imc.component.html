@@ -6,42 +6,38 @@
 </head>
 
 <body>
-    <div align="center">
-
-    </div>
-
 
     <div class="ui-box">
 
-        <h1>IMC</h1>
+        <h1>IMC Calculadora</h1>
         <form>
             <!-- ESTATURA  -->
-            <label for="estatura">Estatura (cm)</label>
+            <label for="estatura">Estatura (cm)*</label>
             <input id="estatura" [(ngModel)]="estatura" type="number" class="form-control estatura" name="estatura"
                 placeholder="0.0">
             <!-- PESO  -->
-            <label for="peso">Peso (kg)</label>
+            <label for="peso">Peso (kg)*</label>
             <input id="peso" [(ngModel)]="peso" type="number" class="form-control peso" name="peso" placeholder="0.0">
             <!-- EDAD -->
-            <label for="edad">Edad</label>
+            <label for="edad">Edad*</label>
             <input id="edad" [(ngModel)]="edad" type="number" class="form-control edad" name="edad" placeholder="0.0">
             <!-- GENERO -->
-            <label for="genero">Genero</label>
+            <label for="genero">Genero*</label>
             <input id="genero" [(ngModel)]="genero" type="text" class="form-control genero" name="genero"
                 placeholder="hombre/mujer">
-        </form>
-        <form action="../../form-result.php" method="post" target="_blank">
             <p><input class="enviarDatos-button" type="submit" (click)="calcularIMC()" value="Enviar datos"></p>
-            <textarea name="textarea" align="center" rows="4" readonly cols="60"> {{result}}</textarea>
+            <label for="textarea">Resultado Obtenido: </label>
+            <p><textarea name="textarea" rows="4" readonly cols="60"> {{result}}</textarea></p>
         </form>
+
         <form>
-            <div class="range" align="center">
+            <div>
                 <img src="rango.jpg" width="500px" height="60px" />
             </div>
-            <div class="hombre" align="center">
+            <div >
                 <img src="hombreT.jpg" width="500px" height="190px" />
             </div>
-            <div class="mujer" align="center">
+            <div >
                 <img src="mujerT.jpg" width="500px" height="190px" />
             </div>
         </form>
