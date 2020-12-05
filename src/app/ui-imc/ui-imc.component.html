@@ -12,17 +12,17 @@
         <h1>IMC Calculadora</h1>
         <form>
             <!-- ESTATURA  -->
-            <label for="estatura">Estatura (cm)*</label>
+            <label for="estatura">Estatura (cm)</label>
             <input id="estatura" [(ngModel)]="estatura" type="number" class="form-control estatura" name="estatura"
                 placeholder="0.0">
             <!-- PESO  -->
-            <label for="peso">Peso (kg)*</label>
+            <label for="peso">Peso (kg)</label>
             <input id="peso" [(ngModel)]="peso" type="number" class="form-control peso" name="peso" placeholder="0.0">
             <!-- EDAD -->
-            <label for="edad">Edad*</label>
+            <label for="edad">Edad</label>
             <input id="edad" [(ngModel)]="edad" type="number" class="form-control edad" name="edad" placeholder="0.0">
             <!-- GENERO -->
-            <label for="genero">Genero*</label>
+            <label for="genero">Genero</label>
             <input id="genero" [(ngModel)]="genero" type="text" class="form-control genero" name="genero"
                 placeholder="hombre/mujer">
             <p><input class="enviarDatos-button" type="submit" (click)="calcularIMC()" value="Enviar datos"></p>

@@ -1,0 +1,22 @@
+<div class="calculator">
+
+    <form>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
+            <input id="username" [(ngModel)]="username" type="text" class="form-control operator1" name="operator1" placeholder="username">
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+            <input id="password" [(ngModel)]="password" type="password" class="form-control operator2" name="operator2" placeholder="password">
+        </div>
+    </form>
+
+    <i class="glyphicon glyphicon-log-in addition-button"
+        (click)="addition()">login</i>
+
+   
+
+</div>
+
+<span class="result">{{ result }}</span>
