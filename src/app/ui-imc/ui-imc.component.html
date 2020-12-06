@@ -7,9 +7,9 @@
 
 <body>
 
-    <div class="ui-box">
+    <div class="ui-box ">
 
-        <h1>IMC Calculadora</h1>
+        <h1>IMC CALCULADORA</h1>
         <form>
             <!-- ESTATURA  -->
             <label for="estatura">Estatura (cm)</label>
@@ -25,7 +25,7 @@
             <label for="genero">Genero</label>
             <input id="genero" [(ngModel)]="genero" type="text" class="form-control genero" name="genero"
                 placeholder="hombre/mujer">
-            <p><input class="enviarDatos-button" type="submit" (click)="calcularIMC()" value="Enviar datos"></p>
+            <p><input class="enviarDatos-button " type="submit" (click)="calcularIMC()" value="Calcular tu IMC"></p>
             <label for="textarea">Resultado Obtenido: </label>
             <p><textarea name="textarea" rows="4" readonly cols="60"> {{result}}</textarea></p>
         </form>
