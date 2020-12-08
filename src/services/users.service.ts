@@ -26,7 +26,7 @@ export class UsersService {
         })
     }
     // HttpClient API post() method => Create employee
-    postUsers(userApi): Observable<UserApi> {
+    loginUser(userApi): Observable<UserApi> {
         console.log(JSON.stringify(userApi));
         return this.http.post<UserApi>(this.apiURL + '/api/auth/signin', JSON.stringify(userApi), this.httpOptions)
             .pipe(

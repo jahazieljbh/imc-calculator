@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       mydata.username = this.username;
       mydata.password = this.password;
 
-      return this.usersService.postUsers(mydata)
+      return this.usersService.loginUser(mydata)
         .subscribe((data: any) => {
 
           this.storageService.setLocal("token", data.accessToken);
