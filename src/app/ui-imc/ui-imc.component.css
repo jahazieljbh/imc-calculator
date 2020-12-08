@@ -1,22 +1,21 @@
 body {
     background-size: cover;
     font-family: sans-serif;
-    height: 150vh;
-    text-align: center;
 }
   
   
 .ui-box {
     width: 550px;
-    height: 900px;
-    background: rgb(1, 3, 3);
+    height: 1100px;
+    background-image: linear-gradient(101deg,#262929,#000000);
     color: rgb(255, 255, 255);
-    top: 60%;
+    top: 70%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -40%);
     box-sizing: border-box;
     padding: 70px 30px;
+    border-radius: 10px;
 }
   
   
@@ -26,54 +25,51 @@ body {
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
-    font-size: 22px;
+    font-size: 2em;
+    text-shadow: gray 4px 0;
+    font-weight: bolder;
+    
 }
   
  
   
 .ui-box input {
-    width: 100%;
     margin-bottom: 20px;
-    width: 150px;
-    height: 35px;
-    
+    column-width: 10px;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(117deg,#03a9f4,#0288d1);
 }
   
 .ui-box input[type="number"], .ui-box input[type="text"] {
-    text-align: center;
-    border: none;
-    border-bottom: 1px solid #fff;
+    background: rgb(240, 255, 240);
+    background-image: linear-gradient(101deg,#f8f8f8,#1cf7c8);
+    padding: 12px 30px;
     background: transparent;
-    outline: none;
-    height: 30px;
-    color: #fff;
-    font-size: 16px;
 }
   
-.enviarDatos-button input[type="submit"] {
-    height: 100px;
-    background: #b80f22;
-    color: rgb(236, 221, 13);
-    font-size: 18px;
-    border-radius: 20px;
+.enviarDatos-button input[type="submit"]:hover {
     cursor: pointer;
-    background: #ffc107;
-    color: #fff;
-    position: absolute;
-    
+    background: rgb(240, 255, 240);
+    border-radius: 24px;
+    background-image: linear-gradient(101deg,#e91e63,#f7681c);
+    padding: 12px 30px;
 }
   
-.ui-box input[type="submit"]:hover {
+.ui-btn input[type="submit"]:hover {
     cursor: pointer;
-    background: rgb(97, 223, 97);
-    color: #fff;
-    width: 150px;
-    height: 35px;
+    background: rgb(240, 255, 240);
+    border-radius: 24px;
+    background-image: linear-gradient(101deg,#1ebae9,#1cf7c8);
+    margin-top: 32px;
+    border: none;
+    padding: 12px 30px;
+    text-decoration: none;
 }
   
 textarea{
     text-align: center;
     resize : none;
+    color: rgb(8, 2, 2);
 }
 .rango{
     background: url(rango.jpg);
@@ -84,3 +80,8 @@ textarea{
 .mujer{
     background: url(mujerT.jpg);
 }
+
+::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 0.7;
+  }

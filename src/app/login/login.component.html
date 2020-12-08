@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+    <div class="calculator col-md-4 form-control">
+
+        <form >
+            <div class="input-group form-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="username" [(ngModel)]="username" type="text" class="form-control operator1" name="operator1"
+                    placeholder="username">
+            </div>
+
+            <div class="input-group form-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                <input id="password" [(ngModel)]="password" type="password" class="form-control operator2"
+                    name="operator2" placeholder="password">
+            </div>
+        </form>
+
+        <a class="btn btn-info btn-block ">
+            <i class="glyphicon glyphicon-log-in addition-button" (click)="addition()"> Login</i>
+        </a>
+
+    </div>
+
+    <span class="result">{{ result }}</span>
+</body>
