@@ -26,6 +26,7 @@
             <input id="genero" [(ngModel)]="genero" type="text" class="form-control genero" name="genero"
                 placeholder="hombre/mujer">
             <p><input class="enviarDatos-button " type="submit" (click)="calcularIMC()" value="Calcular tu IMC"></p>
+            <p><input class="save-imc-button " type="submit" (click)="saveimc()" value="Guardar IMC"></p>
             <label for="textarea">Resultado Obtenido: </label>
             <p><textarea name="textarea" rows="4" readonly cols="60"> {{result}}</textarea></p>
         </form>

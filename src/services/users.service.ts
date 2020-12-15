@@ -35,6 +35,14 @@ export class UsersService {
             )
     }
 
+    signupUser(user) {
+        console.log(JSON.stringify(user));
+        return this.http.post(this.apiURL + '/api/auth/signin', JSON.stringify(user), this.httpOptions)
+            .pipe(
+                retry(1),
+                catchError(this.MessageErrorRegister)
+            )
+    }
 
 
     // Error handling 
@@ -62,6 +70,16 @@ export class UsersService {
             alert('USUARIO Y CONTRASEÑA INCORRECTOS');
         }
         //window.alert(errorMessage);
+        return throwError(errorMessage);
+    }
+
+    MessageErrorRegister(error) {
+        let errorMessage = '';
+        if (error.error instanceof ErrorEvent) {
+            errorMessage = error.error.message;
+        } else {
+            alert('ERROR AL REGISTRAR USUARIO');
+        }
         return throwError(errorMessage);
     }
 

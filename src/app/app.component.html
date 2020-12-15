@@ -1,8 +1,20 @@
-<ul>
-    <li><a routerLink="login">login</a> </li>
-    <li><a routerLink="signup">signup</a> </li>
-</ul>
-  
-<app-ui-imc></app-ui-imc>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
 
-<router-outlet></router-outlet>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" routerLink="/">Home</a>
+                <a class="nav-item nav-link" >Logout</a>
+                <a class="nav-item nav-link" routerLink="login">Login</a>
+                <a class="nav-item nav-link" routerLink="signup">Signup</a>
+                <a class="nav-item nav-link" routerLink="imc">CalculadoraIMC</a>
+            </div>
+        </nav>
+        <router-outlet></router-outlet>
+    </body>
+</html>
+
+

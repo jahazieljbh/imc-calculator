@@ -1,6 +1,6 @@
-.calculator {
+.body {
     width: 400px;
-    transform: translate(120%, 40%);
+    transform: translate(120%, 20%);
     font-size: 0.8em;
 }
 
@@ -10,21 +10,42 @@
     color: red;
 }
 
-.operator1 {
+.name {
     font-size: 1.5em;
     font-weight: lighter;
     color: black;
 
 }
 
-.operator2 {
+.username {
     font-size: 1.5em;
     font-weight: lighter;
     color: black;
 
 }
 
-.addition-button {
+.email {
+    font-size: 1.5em;
+    font-weight: lighter;
+    color: black;
+
+}
+
+.rol {
+    font-size: 1.5em;
+    font-weight: lighter;
+    color: black;
+
+}
+
+.password {
+    font-size: 1.5em;
+    font-weight: lighter;
+    color: black;
+
+}
+
+.button {
     cursor: pointer;
     color: white;
 }
