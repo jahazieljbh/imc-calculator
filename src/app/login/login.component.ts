@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from "../../services/users.service";
 import { UserApi } from "../../models/usersapi";
 import { StorageService } from "../../services/storage.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,21 +15,28 @@ export class LoginComponent implements OnInit {
   username = '';
   password = '';
 
-  constructor(private usersService: UsersService,
-    private storageService: StorageService) { }
+  constructor(
+    private ruta: Router,
+    private usersService: UsersService,
+    private storageService: StorageService) { 
+      if(usersService.isUserLoggedIn){
+        this.ruta.navigate(["login"]);
+      }else{
+        this.ruta.navigate([""])
+      }
+    }
 
   ngOnInit(): void {
   }
 
-  addition() {
+  logIn() {
     let myresult = 'token here !!!';
-
     var mydata = new UserApi;
 
     if (this.username == "" || this.password == "") {
 
       alert('USUARIO Y CONTRASEÑA REQUERIDOS');
-
+      this.result = 'invalido';
     } else {
 
       mydata.username = this.username;
@@ -39,12 +47,10 @@ export class LoginComponent implements OnInit {
 
           this.storageService.setLocal("token", data.accessToken);
           this.result = data.accessToken;
-          alert(data.accessToken);
+          alert('Bienvenido '+ this.username );
 
-        })
-
+        });
     }
-
     this.result = myresult;
   }
 }

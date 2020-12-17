@@ -12,21 +12,19 @@
             <div class="input-group form-group">
                 <span class="input-group-addon input-group-text"><i class="fa fa-user-o"></i></span>
                 <input id="username" [(ngModel)]="username" type="text" class="form-control operator1" name="operator1"
-                    placeholder="username"/>
+                    placeholder="username" required/>
             </div>
             <p></p>
             <div class="input-group form-group">
                 <span class="input-group-addon input-group-text"><i class="fa fa-key"></i></span>
                 <input id="password" [(ngModel)]="password" type="password" class="form-control operator2"
-                    name="operator2" placeholder="password">
+                    name="operator2" placeholder="password" required />
             </div>
         </form>
         <p></p>
         <a class="btn btn-primary">
-            <i class="glyphicon glyphicon-log-in addition-button" (click)="addition()"> Login</i>
+            <i class="glyphicon glyphicon-log-in login-button" (click)="logIn()"> Login</i>
         </a>
 
     </div>
-
-    <span class="result">{{ result }}</span>
 </body>

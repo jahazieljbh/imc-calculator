@@ -4,7 +4,6 @@ import {diagnosticoHombre} from '../hombre/hombre';
 import {diagnosticoMujer} from '../mujer/mujer';
 import { ImcApi } from "../../models/imcapi";
 import { ImcService } from "../../services/imc.service"
-import { StorageService } from "../../services/storage.service";
 
 @Component({
   selector: 'app-ui-imc',
@@ -13,9 +12,7 @@ import { StorageService } from "../../services/storage.service";
 })
 export class UiImcComponent implements OnInit {
 
-  constructor(private imcService : ImcService,
-    private storageService : StorageService
-    ) { }
+  constructor(private imcService : ImcService){ }
 
   result = '';
   estatura = 0;

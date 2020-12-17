@@ -8,13 +8,17 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StorageService } from "../services/storage.service";
 import { SignupComponent } from './signup/signup.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UiImcComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

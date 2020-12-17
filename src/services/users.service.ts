@@ -11,7 +11,7 @@ import { retry, catchError } from 'rxjs/operators';
 export class UsersService {
 
     // Define API
-    apiURL = 'http://localhost:8080';
+    apiURL = 'https://user-imc-api.herokuapp.com';
 
     constructor(private http: HttpClient) { }
 
@@ -35,28 +35,19 @@ export class UsersService {
             )
     }
 
+    isUserLoggedIn() {
+        let user = localStorage.getItem('token')
+        console.log(!(user === null))
+        return !(user === null)
+    }
+
     signupUser(user) {
         console.log(JSON.stringify(user));
-        return this.http.post(this.apiURL + '/api/auth/signin', JSON.stringify(user), this.httpOptions)
+        return this.http.post(this.apiURL + '/api/auth/signup', JSON.stringify(user), this.httpOptions)
             .pipe(
                 retry(1),
                 catchError(this.MessageErrorRegister)
             )
-    }
-
-
-    // Error handling 
-    handleError(error) {
-        let errorMessage = '';
-        if (error.error instanceof ErrorEvent) {
-            // Get client-side error
-            errorMessage = error.error.message;
-        } else {
-            // Get server-side error
-            errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-        }
-        window.alert(errorMessage);
-        return throwError(errorMessage);
     }
 
     MessageError(error) {
