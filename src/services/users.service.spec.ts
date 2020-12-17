@@ -14,7 +14,7 @@ describe('DataApiService', () => {
     const service: UsersService = TestBed.get(UsersService);
 
     var mydata = new UserApi;
-	  mydata.username = "jahazieljbh";
+	  mydata.username = "jahaziel";
     mydata.password = "123456789";
     
     // Act

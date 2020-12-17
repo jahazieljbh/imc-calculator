@@ -41,12 +41,12 @@ export class UsersService {
         return !(user === null)
     }
 
-    signupUser(user) {
+    registrar(user): Observable<UserApi> {
         console.log(JSON.stringify(user));
-        return this.http.post(this.apiURL + '/api/auth/signup', JSON.stringify(user), this.httpOptions)
+        return this.http.post<UserApi>(this.apiURL + '/api/auth/signup', JSON.stringify(user), this.httpOptions)
             .pipe(
                 retry(1),
-                catchError(this.MessageErrorRegister)
+                catchError(this.MessageError)
             )
     }
 
