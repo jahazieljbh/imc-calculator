@@ -4,7 +4,7 @@ import {diagnosticoHombre} from '../hombre/hombre';
 import {diagnosticoMujer} from '../mujer/mujer';
 import { ImcApi } from "../../models/imcapi";
 import { ImcService } from "../../services/imc.service"
-
+import { StorageService } from "../../services/storage.service";
 @Component({
   selector: 'app-ui-imc',
   templateUrl: './ui-imc.component.html',
@@ -12,7 +12,8 @@ import { ImcService } from "../../services/imc.service"
 })
 export class UiImcComponent implements OnInit {
 
-  constructor(private imcService : ImcService){ }
+  constructor(private imcService : ImcService,
+    private storageService: StorageService){ }
 
   result = '';
   estatura = 0;
@@ -40,7 +41,7 @@ export class UiImcComponent implements OnInit {
 
   saveimc() {
     var imc = new ImcApi;
-    imc.iduser = 1;
+    imc.iduser = 15;
     imc.imc = this.myimc;
 
   	return this.imcService.createImc(imc)

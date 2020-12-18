@@ -10,6 +10,7 @@ import { StorageService } from "../../services/storage.service";
 export class HeaderComponent implements OnInit {
 
   constructor(private storageService: StorageService,public usersService: UsersService) { }
+  result = '';
 
   ngOnInit(): void {
   }
@@ -17,6 +18,6 @@ export class HeaderComponent implements OnInit {
   logout() {
     // remove user from local storage
     this.storageService.localDeleteByKey("token");
-   
+    this.result = 'logout';
   }
 }

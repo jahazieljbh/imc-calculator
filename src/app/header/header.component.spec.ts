@@ -29,4 +29,13 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('Deberia remover al usuario de localstorage ', () => {
+    let res;
+
+    component.logout();
+    res = component.result
+
+    expect(res).toEqual('logout');
+  });
+
 });

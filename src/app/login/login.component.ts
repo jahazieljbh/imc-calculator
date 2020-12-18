@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   }
 
   logIn() {
-    let myresult = 'token here !!!';
     var mydata = new UserApi;
 
     if (this.username == "" || this.password == "") {
@@ -37,14 +36,13 @@ export class LoginComponent implements OnInit {
       mydata.username = this.username;
       mydata.password = this.password;
 
-      return this.usersService.loginUser(mydata)
+      this.usersService.loginUser(mydata)
         .subscribe((data: any) => {
           this.storageService.setLocal("token", data.accessToken);
-          alert('Bienvenido '+ this.username );
-          this.result = 'success';
-          this.ruta.navigate(['imc']);
         });
+        alert('Bienvenido '+ this.username );
+        this.result = 'success';
+        this.ruta.navigate(['imc']);
     }
-    this.result = myresult;
   }
 }

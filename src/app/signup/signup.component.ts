@@ -24,7 +24,6 @@ export class SignupComponent implements OnInit {
   }
 
   registar(){
-    let myresult = '';
 
     var mydata = new User;
     
@@ -48,6 +47,5 @@ export class SignupComponent implements OnInit {
       this.result = 'success';
       this.router.navigate(['login']);
     }
-    this.result = myresult;
   }
 }
