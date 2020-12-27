@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="body col-md-4 form-control card-body">
+        <h4 class="card-title text-center">Sign Up</h4>
+        <p></p>
+        <form >
+            <div class="input-group form-group ">
+                <span class="input-group-addon input-group-text"><i class="fa fa-user-o"></i></span>
+                <input id="name" [(ngModel)]="name" type="text" class="form-control name" name="name"
+                    placeholder="Your Name">
+            </div>
+            <p></p>
+            <div class="input-group form-group">
+                <span class="input-group-addon input-group-text"><i class="fa fa-user-o"></i></span>
+                <input id="username" [(ngModel)]="username" type="text" class="form-control username" name="username"
+                    placeholder="Username">
+            </div>
+            <p></p>
+            <div class="input-group form-group">
+                <span class="input-group-addon input-group-text"><i class="fa fa-envelope-o"></i></span>
+                <input id="email" [(ngModel)]="email" type="text" class="form-control email" name="email"
+                    placeholder="Email address">
+            </div>
+            <p></p>
+            <div class="input-group form-group">
+                <span class="input-group-addon input-group-text"><i class="fa fa-key"></i></span>
+                <input id="password" [(ngModel)]="password" type="password" class="form-control password"
+                    name="password" placeholder="Password">
+            </div>
+            <p></p>
+        </form>
+        <p></p>
+        <a class="btn btn-primary ">
+            <i class="glyphicon glyphicon-log-in button" (click)="registar()"> Create account</i>
+        </a>
+
+    </div>
+
+    <span class="result">{{ result }}</span>
+</body>
