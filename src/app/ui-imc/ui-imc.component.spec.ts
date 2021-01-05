@@ -2,6 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { UiImcComponent } from './ui-imc.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { StorageService } from "../../services/storage.service";
+import { ImcApi } from "../../models/imcapi";
 
 describe('UiImcComponent', () => {
   let component: UiImcComponent;
@@ -10,7 +13,8 @@ describe('UiImcComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ UiImcComponent ],
-      imports: [FormsModule]
+      imports: [FormsModule, HttpClientModule],
+      providers:[StorageService]
     })
     .compileComponents();
   });
@@ -58,7 +62,7 @@ describe('UiImcComponent', () => {
     // Arrange 
     await fixture.whenStable();
     fixture.detectChanges();
-    const inputElement = fixture.debugElement.query(By.css('input[name="estatura"]')).nativeElement;
+    const inputElement = fixture.debugElement.query(By.css('.form-control')).nativeElement;
 
     // Act 
     inputElement.value = 170;
