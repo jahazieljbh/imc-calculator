@@ -7,26 +7,25 @@
 
 <body>
 
-    <div class="ui-box ">
+    <div class="ui-box">
 
-        <h1>IMC CALCULADORA</h1>
+        <h1>IMC Calculadora</h1>
         <form>
             <!-- ESTATURA  -->
-            <label for="estatura">Estatura (cm)</label>
+            <label for="estatura">Estatura (cm)*</label>
             <input id="estatura" [(ngModel)]="estatura" type="number" class="form-control estatura" name="estatura"
                 placeholder="0.0">
             <!-- PESO  -->
-            <label for="peso">Peso (kg)</label>
+            <label for="peso">Peso (kg)*</label>
             <input id="peso" [(ngModel)]="peso" type="number" class="form-control peso" name="peso" placeholder="0.0">
             <!-- EDAD -->
-            <label for="edad">Edad</label>
+            <label for="edad">Edad*</label>
             <input id="edad" [(ngModel)]="edad" type="number" class="form-control edad" name="edad" placeholder="0.0">
             <!-- GENERO -->
-            <label for="genero">Genero</label>
+            <label for="genero">Genero*</label>
             <input id="genero" [(ngModel)]="genero" type="text" class="form-control genero" name="genero"
                 placeholder="hombre/mujer">
-            <p><input class="enviarDatos-button btn btn-success" type="submit" (click)="calcularIMC()" value="Calcular tu IMC"></p>
-            <p><input class="save-imc-button btn btn-info" type="submit" (click)="saveimc()" value="Guardar IMC"></p>
+            <p><input class="enviarDatos-button" type="submit" (click)="calcularIMC()" value="Enviar datos"></p>
             <label for="textarea">Resultado Obtenido: </label>
             <p><textarea name="textarea" rows="4" readonly cols="60"> {{result}}</textarea></p>
         </form>
@@ -35,11 +34,9 @@
             <div>
                 <img src="rango.jpg" width="500px" height="60px" />
             </div>
-            <p></p>
             <div >
                 <img src="hombreT.jpg" width="500px" height="190px" />
             </div>
-            <p></p>
             <div >
                 <img src="mujerT.jpg" width="500px" height="190px" />
             </div>
