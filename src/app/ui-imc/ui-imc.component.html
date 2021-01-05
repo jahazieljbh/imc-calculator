@@ -25,18 +25,21 @@
             <label for="genero">Genero</label>
             <input id="genero" [(ngModel)]="genero" type="text" class="form-control genero" name="genero"
                 placeholder="hombre/mujer">
-            <p><input class="enviarDatos-button " type="submit" (click)="calcularIMC()" value="Calcular tu IMC"></p>
+            <p><input class="enviarDatos-button btn btn-success" type="submit" (click)="calcularIMC()" value="Calcular tu IMC"></p>
+            <p><input class="save-imc-button btn btn-info" type="submit" (click)="saveimc()" value="Guardar IMC"></p>
             <label for="textarea">Resultado Obtenido: </label>
-            <p><textarea name="textarea" rows="4" readonly cols="60"> {{result}}</textarea></p>
+            <p><textarea name="textarea" > {{result}}</textarea></p>
         </form>
 
         <form>
             <div>
                 <img src="rango.jpg" width="500px" height="60px" />
             </div>
+            <p></p>
             <div >
                 <img src="hombreT.jpg" width="500px" height="190px" />
             </div>
+            <p></p>
             <div >
                 <img src="mujerT.jpg" width="500px" height="190px" />
             </div>

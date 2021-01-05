@@ -1,7 +1,10 @@
 .calculator {
-    width: 300px;
-    text-align: center;
-    color: #999;
+    width: 400px;
+    transform: translate(120%, 40%);
+    font-size: 0.8em;
+    position: relative;
+    margin: 0;
+    padding: 3%;
 }
 
 .result {
@@ -12,30 +15,21 @@
 
 .operator1 {
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: lighter;
     color: black;
 
 }
 
 .operator2 {
     font-size: 1.5em;
-    font-weight: bold;
-    color: blue;
+    font-weight: lighter;
+    color: black;
 
 }
 
-.addition-button {
+.login-button {
     cursor: pointer;
     color: white;
-}
-
-
-.form-control {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
 }
 
 .btn-block {

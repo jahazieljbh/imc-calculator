@@ -7,12 +7,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StorageService } from "../services/storage.service";
+import { SignupComponent } from './signup/signup.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { UsersService } from "../services/users.service"
 
 @NgModule({
   declarations: [
     AppComponent,
     UiImcComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent,
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +27,7 @@ import { StorageService } from "../services/storage.service";
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [StorageService],
+  providers: [StorageService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

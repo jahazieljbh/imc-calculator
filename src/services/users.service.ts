@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UserApi } from '../models/usersapi';
+import { ResponseApi } from '../models/responseapi';
+import { User } from '../models/user';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +17,8 @@ import { retry, catchError } from 'rxjs/operators';
 export class UsersService {
 
     // Define API
-    apiURL = 'http://localhost:8080';
+    API_URI = 'https://user-imc-api.herokuapp.com/api/auth';
+    //API_URI = 'http://localhost:8080/api/auth';
 
     constructor(private http: HttpClient) { }
 
@@ -26,43 +33,17 @@ export class UsersService {
         })
     }
     // HttpClient API post() method => Create employee
-    loginUser(userApi): Observable<UserApi> {
-        console.log(JSON.stringify(userApi));
-        return this.http.post<UserApi>(this.apiURL + '/api/auth/signin', JSON.stringify(userApi), this.httpOptions)
-            .pipe(
-                retry(1),
-                catchError(this.MessageError)
-            )
+    loginUser(credentials: UserApi): Observable<ResponseApi> {
+        return this.http.post<ResponseApi>(`${this.API_URI}/signin`, credentials, httpOptions)
     }
 
-
-
-    // Error handling 
-    handleError(error) {
-        let errorMessage = '';
-        if (error.error instanceof ErrorEvent) {
-            // Get client-side error
-            errorMessage = error.error.message;
-        } else {
-            // Get server-side error
-            errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-        }
-        window.alert(errorMessage);
-        return throwError(errorMessage);
+    isUserLoggedIn() {
+        let user = sessionStorage.getItem('token')
+        return !(user === null)
     }
 
-    MessageError(error) {
-        let errorMessage = '';
-        if (error.error instanceof ErrorEvent) {
-            // Get client-side error
-            errorMessage = error.error.message;
-        } else {
-            // Get server-side error
-            //errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-            alert('USUARIO Y CONTRASEÑA INCORRECTOS');
-        }
-        //window.alert(errorMessage);
-        return throwError(errorMessage);
+    registrar(info: User): Observable<string> {
+        return this.http.post<string>(`${this.API_URI}/signup`, info, httpOptions)
     }
 
 }

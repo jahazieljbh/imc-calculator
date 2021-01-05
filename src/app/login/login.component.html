@@ -1,31 +1,29 @@
 <html lang="en">
 
-<head>
-
-</head>
-
 <body>
-    <div class="calculator col-md-4 form-control">
-
-        <form >
+    <div class="calculator col-md-4 form-control ">
+        <h4 class="card-title text-center">Iniciar Sesión</h4>
+        <p></p>
+        <div *ngIf="isLoginFailed" class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+        <form>
             <div class="input-group form-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <span class="input-group-addon input-group-text"><i class="fa fa-user-o"></i></span>
                 <input id="username" [(ngModel)]="username" type="text" class="form-control operator1" name="operator1"
-                    placeholder="username">
+                    placeholder="Nombre de Usuario" required />
             </div>
-
+            <p></p>
             <div class="input-group form-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                <span class="input-group-addon input-group-text"><i class="fa fa-key"></i></span>
                 <input id="password" [(ngModel)]="password" type="password" class="form-control operator2"
-                    name="operator2" placeholder="password">
+                    name="operator2" placeholder="Contraseña" required />
             </div>
         </form>
-
-        <a class="btn btn-info btn-block ">
-            <i class="glyphicon glyphicon-log-in addition-button" (click)="addition()"> Login</i>
-        </a>
-
+        <p></p>
+        <div class="form-group">
+            <button class="btn btn-primary login-button" (click)="logIn()">Iniciar sesión</button>
+            
+        </div>
     </div>
-
-    <span class="result">{{ result }}</span>
 </body>
