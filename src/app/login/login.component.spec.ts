@@ -5,17 +5,26 @@ import { LoginComponent } from './login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StorageService } from "../../services/storage.service";
 import { AppRoutingModule } from '../app-routing.module';
-
+import { UsersService } from "../../services/users.service";
+import { UserApi } from "../../models/usersapi";
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-
+  let username = 'jahaziel';
+  let password = '123456789';
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
-      imports: [FormsModule,HttpClientModule,AppRoutingModule],
-      providers:[StorageService]
+      imports: [
+        HttpClientModule,
+        AppRoutingModule,
+        FormsModule
+      ],
+      providers:[
+        StorageService,
+        UsersService
+      ]
     })
     .compileComponents();
   });
@@ -56,12 +65,12 @@ describe('LoginComponent', () => {
     expect(component.password).toEqual('123456789');
   });
 
-  it('Deberia inicia sesión si tiene los campos llenos', () => {
+  it('Deberia inicia sesión si no tiene los campos llenos ', () => {
 
     // Arrange
     let res;
     component.username = 'jahaziel';
-    component.password= "123456789";
+    component.password = '123456789';
     // Act
     component.logIn();
     res = component.result;
@@ -75,11 +84,11 @@ describe('LoginComponent', () => {
     // Arrange
     let res;
     component.username = '';
-    component.password= '';
+    component.password = '';
     // Act
     component.logIn();
     res = component.result;
-    
+
     // Assert
     expect(res).toBe('failed');
   });

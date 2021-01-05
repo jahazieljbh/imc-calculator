@@ -10,6 +10,7 @@ import { StorageService } from "../services/storage.service";
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { UsersService } from "../services/users.service"
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [StorageService],
+  providers: [StorageService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

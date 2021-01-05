@@ -4,6 +4,7 @@ import { UiImcComponent } from './ui-imc.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StorageService } from "../../services/storage.service";
+import { ImcApi } from "../../models/imcapi";
 
 describe('UiImcComponent', () => {
   let component: UiImcComponent;

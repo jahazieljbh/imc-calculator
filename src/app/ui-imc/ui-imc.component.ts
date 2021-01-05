@@ -21,7 +21,10 @@ export class UiImcComponent implements OnInit {
   edad = 0;
   genero='';
   myimc = 0;
+  userId: any;
+
   ngOnInit(): void {
+    this.userId = this.storageService.getId("id");
   }
 
   calcularIMC(){
@@ -39,9 +42,11 @@ export class UiImcComponent implements OnInit {
     this.result = Resultado;
   }
 
+  
+
   saveimc() {
     var imc = new ImcApi;
-    imc.iduser = 15;
+    imc.iduser = this.userId;
     imc.imc = this.myimc;
 
   	return this.imcService.createImc(imc)

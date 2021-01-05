@@ -4,27 +4,37 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserApi } from "../models/usersapi";
 
 describe('DataApiService', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [ HttpClientModule],
-    providers: [ HttpClientModule]
-  }));
+  let service: UsersService;
+  let username: string;
+  let password: string;
+  beforeEach(async () => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule],
+      providers:[HttpClientModule, UsersService]
+    })
+    service = TestBed.inject(UsersService);
+    username = "jahaziel";
+    password = "123456789";
+  });
 
-  it('should return an Logged User', () => {
+  it('should return an Logged User', (done: DoneFn) => {
     // Arrange
-    const service: UsersService = TestBed.get(UsersService);
-
-    var mydata = new UserApi;
-	  mydata.username = "jahaziel";
-    mydata.password = "123456789";
     
+    var mydata = new UserApi(username,password);
+    mydata.username = username;
+    mydata.password = password;
+
     // Act
     service.loginUser(mydata).subscribe((user: any) => {
-      console.log(user.tokenType);
-      console.log(user.accessToken);
 
-      expect(user.tokenType).toEqual('Bearer');
+      console.log(user.username);
+      
+      // Assert
+      expect(user.username).toEqual('jahaziel');
+      done(); //call DoneFn
+
     });
- 
+
   });
 
 });

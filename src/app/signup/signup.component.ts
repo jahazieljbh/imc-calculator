@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
 import { UsersService } from "../../services/users.service";
 import { User } from "../../models/user";
 @Component({
@@ -9,43 +8,37 @@ import { User } from "../../models/user";
 })
 export class SignupComponent implements OnInit {
 
-  result = '';
   name = '';
   username = '';
   email = '';
-  role= ['user'];
+  role: string[] = [];
   password = '';
+  mydata: User;
+  isSignedUp = false;
+  isSignUpFailed = false;
+  errorMessage = false;
 
-  constructor(
-     private router: Router,
-     private usersService: UsersService) { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
   }
 
-  registar(){
+  registar() {
+    console.log(this.mydata);
 
-    var mydata = new User;
-    
-    if (this.username == "" || this.password == "" || this.name=="" || this.email=="") {
-     
-      alert('Ingrese Datos alos campos');
-      this.result = 'failed';
+    this.mydata = new User(this.name, this.username, this.email, this.password);
+    this.mydata.role = ['user'];
 
-    } else {
-      
-      mydata.name = this.name;
-      mydata.username = this.username;
-      mydata.email = this.email;
-      mydata.role=this.role;
-      mydata.password = this.password;
-      
-      this.usersService.registrar(mydata)
+    this.usersService.registrar(this.mydata)
       .subscribe((data: any) => {
-      })
-      alert('Cuenta Creada con Exito');
-      this.result = 'success';
-      this.router.navigate(['login']);
-    }
+        console.log(data);
+        this.isSignedUp = true;
+        this.isSignUpFailed = false;
+    },
+    error => {
+      console.log(error);
+      this.errorMessage = error.error.message;
+      this.isSignUpFailed = true;
+    });
   }
 }

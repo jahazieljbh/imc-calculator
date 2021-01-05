@@ -4,24 +4,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserApi } from "../models/usersapi";
 import { StorageService } from "../services/storage.service";
 
-describe('DataApiService', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [ HttpClientModule],
-    providers: [ HttpClientModule, StorageService]
-  }));
+describe('StorageService', () => {
 
-  it('should return token method set and get local', () => {
+  let service: StorageService;
 
-    const service: StorageService = TestBed.get(StorageService);
-
-    service.setLocal("token", "Bearer");
-
-    expect(service.getLocal('token')).toEqual('Bearer');
+  beforeEach(async () => {
+    TestBed.configureTestingModule({
+      imports: [HttpClientModule],
+      providers:[HttpClientModule, StorageService]
+    })
+    service = TestBed.inject(StorageService);
   });
 
-  it('should return token method set and get session', () => {
+  it('should be created StorageService', () => {
+    expect(service).toBeTruthy();
+  });
 
-    const service: StorageService = TestBed.get(StorageService);
+  it('should set token in session storage method and get token', () => {
 
     service.setSession("token", "Bearer");
 

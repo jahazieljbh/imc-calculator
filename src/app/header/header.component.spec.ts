@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { StorageService } from "../../services/storage.service";
 import { HeaderComponent } from './header.component';
 import { By } from '@angular/platform-browser';
-
+import { AppRoutingModule } from '../app-routing.module';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -13,7 +13,7 @@ describe('HeaderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HeaderComponent ],
-      imports: [FormsModule, HttpClientModule],
+      imports: [FormsModule, HttpClientModule, AppRoutingModule],
       providers:[StorageService]
     })
     .compileComponents();

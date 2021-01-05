@@ -1,29 +1,25 @@
 <html lang="en">
 
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
 <body>
     <div class="calculator col-md-4 form-control ">
-        <h4 class="card-title text-center">Log In</h4>
+        <h4 class="card-title text-center">Iniciar Sesión</h4>
         <p></p>
         <form >
             <div class="input-group form-group">
                 <span class="input-group-addon input-group-text"><i class="fa fa-user-o"></i></span>
                 <input id="username" [(ngModel)]="username" type="text" class="form-control operator1" name="operator1"
-                    placeholder="username" required/>
+                    placeholder="Nombre de Usuario" required/>
             </div>
             <p></p>
             <div class="input-group form-group">
                 <span class="input-group-addon input-group-text"><i class="fa fa-key"></i></span>
                 <input id="password" [(ngModel)]="password" type="password" class="form-control operator2"
-                    name="operator2" placeholder="password" required />
+                    name="operator2" placeholder="Contraseña" required />
             </div>
         </form>
         <p></p>
         <a class="btn btn-primary">
-            <i class="glyphicon glyphicon-log-in login-button" (click)="logIn()"> Login</i>
+            <i class="login-button" (click)="logIn()"> Entrar</i>
         </a>
 
     </div>

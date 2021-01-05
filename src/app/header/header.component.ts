@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from "../../services/users.service";
 import { StorageService } from "../../services/storage.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +10,16 @@ import { StorageService } from "../../services/storage.service";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private storageService: StorageService,public usersService: UsersService) { }
+  constructor(private storageService: StorageService,
+            public usersService: UsersService, private router: Router) { }
+
   result = '';
 
   ngOnInit(): void {
   }
 
   logout() {
-    // remove user from local storage
-    this.storageService.localDeleteByKey("token");
+    this.storageService.signOut();
     this.result = 'logout';
   }
 }

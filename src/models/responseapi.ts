@@ -1,3 +1,8 @@
 export class ResponseApi {
-    message: string;
+    id: string;
+    email: string;
+    authorities: string[];
+    accessToken: string;
+    type: string;
+    username: string;
 }

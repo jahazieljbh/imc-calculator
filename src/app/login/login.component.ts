@@ -18,31 +18,35 @@ export class LoginComponent implements OnInit {
   constructor(
     private ruta: Router,
     private usersService: UsersService,
-    private storageService: StorageService) { 
-    }
+    private storageService: StorageService) {
+  }
 
   ngOnInit(): void {
+
   }
 
   logIn() {
-    var mydata = new UserApi;
+    var mydata = new UserApi(this.username, this.password);
 
     if (this.username == "" || this.password == "") {
       this.result = 'failed';
       alert('USUARIO Y CONTRASEÑA REQUERIDOS');
-      this.ruta.navigate(['']);
     } else {
 
       mydata.username = this.username;
       mydata.password = this.password;
 
       this.usersService.loginUser(mydata)
-        .subscribe((data: any) => {
-          this.storageService.setLocal("token", data.accessToken);
+        .subscribe(data => {
+          console
+          .log(data);
+          this.storageService.setSession("token", data.accessToken);
+          this.storageService.saveId("id", data.id);
+          this.storageService.saveUsername("username", data.username);
+          this.storageService.saveEmail("email", data.email);
+          this.storageService.saveAuthorities("roles", data.authorities)
         });
-        alert('Bienvenido '+ this.username );
-        this.result = 'success';
-        this.ruta.navigate(['imc']);
+      this.result = 'success';
     }
   }
 }

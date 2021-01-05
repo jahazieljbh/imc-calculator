@@ -1,4 +1,5 @@
 export class StorageService {
+    private roles: Array<string> = [];
 
     constructor() { }
 
@@ -6,37 +7,61 @@ export class StorageService {
         return 'https://user-imc-api.herokuapp.com'
     }
 
-    setSession(key: string, obj: any) {
-        sessionStorage.setItem(key, JSON.stringify(obj))
+    setSession(key: string, token: string) {
+        window.sessionStorage.removeItem(key);
+        window.sessionStorage.setItem(key, token);
     }
 
     getSession(key: string) {
-        const obj = sessionStorage.getItem(key);
-        return obj ? JSON.parse(obj) : null;
+        return sessionStorage.getItem(key);
     }
 
-    sessionDeleteAll() {
-        sessionStorage.clear();
+    signOut() {
+        window.sessionStorage.clear();
     }
 
-    sessionDeleteByKey(key: string) {
-        sessionStorage.removeItem(key);
+    saveUsername(key: string, username: string) {
+        window.sessionStorage.removeItem(key);
+        window.sessionStorage.setItem(key, username);
     }
 
-    setLocal(key: string, obj: any) {
-        localStorage.setItem(key, JSON.stringify(obj));
+    getUsername(key: string): string {
+        return sessionStorage.getItem(key);
     }
 
-    getLocal(key: string) {
-        const obj = localStorage.getItem(key);
-        return obj ? JSON.parse(obj) : null;
+    saveAuthorities(key: string, authorities: string[]) {
+        window.sessionStorage.removeItem(key);
+        window.sessionStorage.setItem(key, JSON.stringify(authorities));
     }
 
-    localDeleteAll() {
-        localStorage.clear();
+    getAuthorities(key1: string, key2: string): string[] {
+        this.roles = [];
+
+        if (sessionStorage.getItem(key1)) {
+            JSON.parse(sessionStorage.getItem(key2)).forEach(authority => {
+                this.roles.push(authority.authority);
+            });
+        }
+
+        return this.roles;
     }
 
-    localDeleteByKey(key: string) {
-        localStorage.removeItem(key);
+    saveId(key: string, id: string) {
+        window.sessionStorage.removeItem(key);
+        window.sessionStorage.setItem(key, id);
     }
+
+    getId(key: string): string {
+        return sessionStorage.getItem(key);
+    }
+
+    saveEmail(key: string, email: string) {
+        window.sessionStorage.removeItem(key);
+        window.sessionStorage.setItem(key, email);
+    }
+
+    getEmail(key: string): string {
+        return sessionStorage.getItem(key);
+    }
+
 }
