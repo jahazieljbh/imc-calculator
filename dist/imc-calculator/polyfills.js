@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Administrator\Desktop\Escritorio\imc-calculator\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! /home/jacielpc/Escritorio/api/tdd/imc-calculator/src/polyfills.ts */"hN/g");
 
 
 /***/ }),

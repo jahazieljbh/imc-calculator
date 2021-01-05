@@ -11,22 +11,20 @@ import { UserApi } from "../../models/usersapi";
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-  let username = 'jahaziel';
-  let password = '123456789';
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
+      declarations: [LoginComponent],
       imports: [
         HttpClientModule,
         AppRoutingModule,
         FormsModule
       ],
-      providers:[
+      providers: [
         StorageService,
         UsersService
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -39,7 +37,7 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Should set username model through ngModel signup', async () => {
+  xit('Should set username model through ngModel sign in', async () => {
     // Arrange 
     await fixture.whenStable();
     fixture.detectChanges();
@@ -52,7 +50,7 @@ describe('LoginComponent', () => {
     expect(component.username).toEqual('jahaziel');
   });
 
-  it('Should set password model through ngModel signup', async () => {
+  xit('Should set password model through ngModel sign in', async () => {
     // Arrange 
     await fixture.whenStable();
     fixture.detectChanges();
@@ -68,15 +66,14 @@ describe('LoginComponent', () => {
   it('Deberia inicia sesión si no tiene los campos llenos ', () => {
 
     // Arrange
-    let res;
+    let isLoginFailed;
     component.username = 'jahaziel';
     component.password = '123456789';
     // Act
     component.logIn();
-    res = component.result;
-
+    isLoginFailed = component.isLoginFailed;
     // Assert
-    expect(res).toBe('success');
+    expect(isLoginFailed).toBe(false);
   });
 
   it('No Deberia inicia sesión si no tiene los campos llenos ', () => {
@@ -90,6 +87,7 @@ describe('LoginComponent', () => {
     res = component.result;
 
     // Assert
-    expect(res).toBe('failed');
+    expect(res).toBe("isEmpty");
   });
+
 });

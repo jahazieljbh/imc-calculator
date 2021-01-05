@@ -31,8 +31,6 @@ export class ImcService {
   }  
   // HttpClient API post() method => Create employee
   createImc(imcApi: ImcApi): Observable<ImcApi> {
-    console.log(JSON.stringify(imcApi));
-    console.log(JSON.stringify(this.httpOptions));
     return this.http.post<ImcApi>(this.apiURL + '/imcs', JSON.stringify(imcApi), this.httpOptions)
   }
 

@@ -72,12 +72,15 @@ body {
     border: none;
     padding: 12px 30px;
     text-decoration: none;
+    
 }
   
 textarea{
     text-align: center;
     resize : none;
     color: rgb(8, 2, 2);
+    padding: 6%;
+    width: 500px;
 }
 .rango{
     background: url(rango.jpg);
@@ -94,3 +97,4 @@ textarea{
     color: rgb(255, 255, 255);
     opacity: 0.7;
   }
+

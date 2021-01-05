@@ -3,10 +3,6 @@ export class StorageService {
 
     constructor() { }
 
-    getApiUrl() {
-        return 'https://user-imc-api.herokuapp.com'
-    }
-
     setSession(key: string, token: string) {
         window.sessionStorage.removeItem(key);
         window.sessionStorage.setItem(key, token);

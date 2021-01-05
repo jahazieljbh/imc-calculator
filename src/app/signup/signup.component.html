@@ -4,6 +4,9 @@
     <div class="body col-md-4 form-control card-body">
         <h4 class="card-title text-center">Regístrate</h4>
         <p></p>
+        <div *ngIf="isSignUpFailed" class="alert alert-warning">
+            Signup<br/>{{errorMessage}}
+        </div>
         <form>
             <div class="input-group form-group ">
                 <span class="input-group-addon input-group-text"><i class="fa fa-user-o"></i></span>
@@ -29,14 +32,10 @@
                     name="password" placeholder="Contraseña">
             </div>
             <p></p>
-
             <div class="form-group">
-                <a class="btn btn-primary">
-                    <i class="button" (click)="registar()">Crear Cuenta</i>
-                </a>
+                <button class="btn btn-primary button" (click)="registar()">Registrarse</button>
                 <a routerLink="/login" class="btn btn-link">Ya tengo mi cuenta</a>
             </div>
-
         </form>
 
     </div>

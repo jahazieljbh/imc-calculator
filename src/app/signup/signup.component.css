@@ -2,7 +2,9 @@
     width: 400px;
     transform: translate(120%, 20%);
     font-size: 0.8em;
-    position: absolute;
+    position: relative;
+    margin: 0;
+    padding: 3%;
 }
 
 .result {

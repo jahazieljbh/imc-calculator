@@ -8,6 +8,7 @@ import { User } from "../../models/user";
 })
 export class SignupComponent implements OnInit {
 
+  result = '';
   name = '';
   username = '';
   email = '';
@@ -28,17 +29,23 @@ export class SignupComponent implements OnInit {
 
     this.mydata = new User(this.name, this.username, this.email, this.password);
     this.mydata.role = ['user'];
-
-    this.usersService.registrar(this.mydata)
-      .subscribe((data: any) => {
-        console.log(data);
-        this.isSignedUp = true;
-        this.isSignUpFailed = false;
-    },
-    error => {
-      console.log(error);
-      this.errorMessage = error.error.message;
-      this.isSignUpFailed = true;
-    });
+    if (this.name == "" || this.username == "" || this.email == "" || this.password == "") {
+      this.result = 'isEmpty';
+      alert('CAMPOS REQUERIDOS');
+    } else {
+      this.usersService.registrar(this.mydata)
+        .subscribe((data: any) => {
+          console.log(data);
+          this.isSignedUp = true;
+          this.isSignUpFailed = false;
+        },
+          error => {
+            console.log(error);
+            this.errorMessage = error.error.message;
+            this.isSignUpFailed = true;
+            this.result = 'failed';
+          });
+        this.result = 'success';
+    }
   }
 }

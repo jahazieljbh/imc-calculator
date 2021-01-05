@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
-<div class="back-img">
-    <h1>Bienvenido a Website</h1>
-    <h2>Calcula tu IMC</h2>
-    <p>
-        <strong>ID:</strong> {{info.id}}<br/>
-        <strong>Nombre de usuario:</strong> {{info.username}}<br/>
-        <strong>Email:</strong> {{info.email}}<br/>
-        <strong>Roles:</strong> {{info.authorities}}<br/>
-        <strong>Token:</strong> {{info.token}}
-    </p>
+<div >
+    <h1>Información personal</h1>
+<br/>
+    <div class="row">
+        <div class="user"></div>
+        <div class="col-md-5 list">
+            <p></p>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>ID:</strong> {{info.id}}<br/></li>
+                <li class="list-group-item"><strong>Nombre de usuario:</strong> {{info.username}}<br/></li>
+                <li class="list-group-item"><strong>Email:</strong> {{info.email}}<br/></li>
+                <li class="list-group-item"><strong>Roles:</strong> {{info.authorities}}<br/></li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 </html>

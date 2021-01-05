@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
   result = '';
   username = '';
   password = '';
+  errorMessage = '';
+  isLoginFailed = false;
 
   constructor(
     private ruta: Router,
@@ -29,8 +31,8 @@ export class LoginComponent implements OnInit {
     var mydata = new UserApi(this.username, this.password);
 
     if (this.username == "" || this.password == "") {
-      this.result = 'failed';
-      alert('USUARIO Y CONTRASEÑA REQUERIDOS');
+      this.result = 'isEmpty';
+      alert('CAMPOS VACIOS USUARIO Y CONTRASEÑA REQUERIDOS');
     } else {
 
       mydata.username = this.username;
@@ -45,8 +47,15 @@ export class LoginComponent implements OnInit {
           this.storageService.saveUsername("username", data.username);
           this.storageService.saveEmail("email", data.email);
           this.storageService.saveAuthorities("roles", data.authorities)
+          this.isLoginFailed = false;
+          this.ruta.navigate(['home']);
+        },
+        error => {
+          console.log(error);
+          this.errorMessage = error.error.message;
+          this.isLoginFailed = true;
+          this.result = 'failed'
         });
-      this.result = 'success';
     }
   }
 }

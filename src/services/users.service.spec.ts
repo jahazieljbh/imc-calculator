@@ -25,7 +25,7 @@ describe('DataApiService', () => {
     mydata.password = password;
 
     // Act
-    service.loginUser(mydata).subscribe((user: any) => {
+    service.loginUser(mydata).subscribe(user => {
 
       console.log(user.username);
       

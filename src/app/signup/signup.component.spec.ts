@@ -90,8 +90,8 @@ describe('SignupComponent', () => {
     component.name = 'jahaziel';
     component.username = 'jahazieljbh';
     component.email= 'jahaziel@gmail.com';
-    component.role = ['pm']
-    component.password="hombre";
+    component.role = ['user']
+    component.password='123456789';
     // Act
     component.registar();
     res = component.result;
@@ -107,14 +107,13 @@ describe('SignupComponent', () => {
     component.name = '';
     component.username = '';
     component.email= '';
-    component.role = ['']
     component.password= '';
     // Act
     component.registar();
     res = component.result;
     
     // Assert
-    expect(res).toBe('failed');
+    expect(res).toBe('isEmpty');
   });
 
 });
