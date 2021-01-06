@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.info = {
-      token: this.storageService.getSession("token"),
+    //  token: this.storageService.getSession("token"),
       id: this.storageService.getId("id"),
       email: this.storageService.getEmail("email"),
       username: this.storageService.getUsername("username"),

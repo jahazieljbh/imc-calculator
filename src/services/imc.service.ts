@@ -34,4 +34,11 @@ export class ImcService {
     return this.http.post<ImcApi>(this.apiURL + '/imcs', JSON.stringify(imcApi), this.httpOptions)
   }
 
+  getHistorial(): Observable<ImcApi[]> {
+    return this.http.get<ImcApi[]>(this.apiURL + '/imcs', this.httpOptions)
+  }
+
+  getGrafica(): Observable<ImcApi[]>{
+    return this.http.get<ImcApi[]>(this.apiURL + '/imcs', this.httpOptions);
+  }
 }
