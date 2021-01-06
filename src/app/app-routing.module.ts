@@ -5,6 +5,7 @@ import { SignupComponent } from './signup/signup.component';
 import { UiImcComponent } from './ui-imc/ui-imc.component';
 import { HomeComponent } from './home/home.component';
 import { HistorialComponent } from './historial/historial.component'
+import { GraficaComponent } from './grafica/grafica.component';
 
 const routes: Routes = [
   { path:'login', component: LoginComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path:'home', component: HomeComponent},
   { path:'imc', component: UiImcComponent},
   { path:'historial', component: HistorialComponent},
+  { path:'grafica', component: GraficaComponent},
   { path: '', pathMatch: 'full', redirectTo: 'login' }
 ];
 

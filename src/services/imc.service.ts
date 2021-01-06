@@ -38,4 +38,7 @@ export class ImcService {
     return this.http.get<ImcApi[]>(this.apiURL + '/imcs', this.httpOptions)
   }
 
+  getGrafica(): Observable<ImcApi[]>{
+    return this.http.get<ImcApi[]>(this.apiURL + '/imcs', this.httpOptions);
+  }
 }
