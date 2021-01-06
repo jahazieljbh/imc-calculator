@@ -5,6 +5,7 @@
                 <a *ngIf="!usersService.isUserLoggedIn()" class="nav-item nav-link" routerLink="login">Iniciar Sesión</a>
                 <a *ngIf="!usersService.isUserLoggedIn()" class="nav-item nav-link" routerLink="signup">Regístrate</a>
                 <a *ngIf="usersService.isUserLoggedIn()" class="nav-item nav-link" routerLink="imc">Mi CalculadoraIMC</a>
+                <a *ngIf="usersService.isUserLoggedIn()" class="nav-item nav-link" routerLink="historial">Historial</a>
                 <li><a *ngIf="usersService.isUserLoggedIn()" class="nav-item nav-link" (click)="logout()" routerLink="">Cerrar sesión</a></li>
             </div>
         </nav>
