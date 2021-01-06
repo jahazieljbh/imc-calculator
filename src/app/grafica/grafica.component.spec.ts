@@ -10,11 +10,11 @@ describe('GraficaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GraficaComponent ],
+      declarations: [GraficaComponent],
       imports: [HttpClientModule, AppRoutingModule],
-      providers:[StorageService]
+      providers: [StorageService]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
