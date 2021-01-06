@@ -25,8 +25,6 @@ export class SignupComponent implements OnInit {
   }
 
   registar() {
-    console.log(this.mydata);
-
     this.mydata = new User(this.name, this.username, this.email, this.password);
     this.mydata.role = ['user'];
     if (this.name == "" || this.username == "" || this.email == "" || this.password == "") {
@@ -40,7 +38,6 @@ export class SignupComponent implements OnInit {
           this.isSignUpFailed = false;
         },
           error => {
-            console.log(error);
             this.errorMessage = error.error.message;
             this.isSignUpFailed = true;
             this.result = 'failed';
