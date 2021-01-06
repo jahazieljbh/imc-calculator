@@ -15,6 +15,7 @@ import { HistorialComponent } from './historial/historial.component'
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ImcService } from 'src/services/imc.service';
+import { GraficaComponent } from './grafica/grafica.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ImcService } from 'src/services/imc.service';
     SignupComponent,
     HeaderComponent,
     HomeComponent,
-    HistorialComponent
+    HistorialComponent,
+    GraficaComponent
   ],
   imports: [
     BrowserModule,

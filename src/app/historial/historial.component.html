@@ -1,23 +1,29 @@
-<div class="row mt-5">
-    <div class="col">
-        <table *ngIf='imcs' class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">ID_IMC</th>
-                    <th scope="col">ID_USER</th>
-                    <th scope="col">IMC</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let imc of imcs | keyvalue | paginate: {itemsPerPage: 7, currentPage: actual}; let i = index">
-                    <th scope="row">{{i+1}}</th>
-                    <td>{{imc.value.id}}</td>
-                    <td>{{imc.value.iduser}}</td>
-                    <td>{{imc.value.imc}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <pagination-controls (pageChange)="actual = $event"></pagination-controls>
+<div class="container mt-5">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>IMCS</h3>
+        </div>
+        <div class="col card-body">
+            <table *ngIf='imcs' class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">ID_IMC</th>
+                        <th scope="col">ID_USER</th>
+                        <th scope="col">IMC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr
+                        *ngFor="let imc of imcs | keyvalue | paginate: {itemsPerPage: 7, currentPage: actual}; let i = index">
+                        <th scope="row">{{i+1}}</th>
+                        <td>{{imc.value.id}}</td>
+                        <td>{{imc.value.iduser}}</td>
+                        <td>{{imc.value.imc}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pagination-controls (pageChange)="actual = $event"></pagination-controls>
+        </div>
     </div>
 </div>
