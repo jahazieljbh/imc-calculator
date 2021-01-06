@@ -96,95 +96,464 @@ it('Should calculate IMC of 40kg y 156cm = 16.44 imc', () => {
 });
 
 describe('Hombre - Text - unit tests', () => {
-  it('Should print "Usted tiene bajo peso" when edad=5 and IMC=10', () => {
+  it('Should print "Usted tiene bajo peso" when edad=10 and IMC=12', () => {
     //Arrangin
-    let result ='';
+    //test
+    let result = '';
     //Act
-    result = diagnosticoHombre(5,10);
+    result = diagnosticoHombre(10, 12);
     //Assert
     expect(result).toBe("Usted tiene bajo peso");
- });
-
- it('Should print "Usted tiene obesidad tipo I" when edad=21 and IMC=32', () => {
-  //Arrangin
-  let result ='';
-  //Act
-  result = diagnosticoHombre(21,32);
-  //Assert
-  expect(result).toBe("Usted tiene obesidad tipo I");
-});
-
-it('Should print "Usted tiene un peso normal" when edad=15 and IMC=21', () => {
-  //Arrangin
-  let result ='';
-  //Act
-  result = diagnosticoHombre(15,21);
-  //Assert
-  expect(result).toBe("Usted tiene un peso normal");
-});
-
-it('Should print "Usted tiene un peso normal" when edad=10 and IMC=17', () => {
-  //Arrangin
-  let result ='';
-  //Act
-  result = diagnosticoHombre(10,17);
-  //Assert
-  expect(result).toBe("Usted tiene un peso normal");
-});
-
-it('Should print "Usted tiene obesidad tipo II" when edad=20 and IMC=37', () => {
-    //Arrangin
-    let result ='';
-    //Act
-    result = diagnosticoHombre(20,37);
-    //Assert
-    expect(result).toBe("Usted tiene obesidad tipo II");
   });
 
-  it('Should print "Usted tiene obesidad tipo III" when edad=30 and IMC=45', () => {
+  it('Should print "Usted tiene un peso normal" when edad=10 and IMC=15', () => {
     //Arrangin
-    let result ='';
+    //test
+    let result = '';
     //Act
-    result = diagnosticoHombre(30,45);
+    result = diagnosticoHombre(10, 15);
     //Assert
-    expect(result).toBe("Usted tiene obesidad tipo III");
+    expect(result).toBe("Usted tiene un peso normal");
   });
 
-  it('Should print "Usted tiene sobrepeso" when edad=46 and IMC=27', () => {
+  it('Should print "Usted tiene obesidad" when edad=10 and IMC=21.5', () => {
     //Arrangin
-    let result ='';
+    //test
+    let result = '';
     //Act
-    result = diagnosticoHombre(46,27);
-    //Assert
-    expect(result).toBe("Usted tiene sobrepeso");
-  });
-
-  it('Should print "Usted tiene obesidad" when edad=13 and IMC=32', () => {
-    //Arrangin
-    let result ='';
-    //Act
-    result = diagnosticoHombre(13,32);
+    result = diagnosticoHombre(10, 21.5);
     //Assert
     expect(result).toBe("Usted tiene obesidad");
   });
 
-  it('Should print "Usted tiene un peso normal" when edad=55 and IMC=22', () => {
+  it('Should print "Usted tiene sobrepeso" when edad=10 and IMC=19.5', () => {
     //Arrangin
-    let result ='';
+    //test
+    let result = '';
     //Act
-    result = diagnosticoHombre(55,22);
+    result = diagnosticoHombre(10, 19.5);
+    //Assert
+    expect(result).toBe("Usted tiene sobrepeso");
+  });
+
+  it('Should print "Usted tiene bajo peso" when edad=11 and IMC=14.1', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(11, 14.1);
+    //Assert
+    expect(result).toBe("Usted tiene bajo peso");
+  });
+  it('Should print "Usted tiene un peso normal" when edad=11 and IMC=17.3', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(11, 17.3);
     //Assert
     expect(result).toBe("Usted tiene un peso normal");
   });
 
-  it('Should print "Usted tiene un peso normal" when edad=62 and IMC=21.3', () => {
+  it('Should print "Usted tiene sobrepeso" when edad=11 and IMC=21', () => {
     //Arrangin
-    let result ='';
+    //test
+    let result = '';
     //Act
-    result = diagnosticoHombre(62,21.3);
+    result = diagnosticoHombre(11, 21);
+    //Assert
+    expect(result).toBe("Usted tiene sobrepeso");
+  });
+
+
+  it('Should print "Usted tiene obesidad" when edad=11 and IMC=22.5', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(11, 22.5);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad");
+  });
+
+  it('Should print "Usted tiene bajo peso" when edad=12 and IMC=14.5', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(12, 14.5);
+    //Assert
+    expect(result).toBe("Usted tiene bajo peso");
+  });
+
+  it('Should print "Usted tiene un peso normal" when edad=12 and IMC=18.6', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(12, 18.6);
     //Assert
     expect(result).toBe("Usted tiene un peso normal");
   });
 
+  it('Should print "Usted tiene sobrepeso" when edad=12 and IMC=20.1', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(12, 20.1);
+    //Assert
+    expect(result).toBe("Usted tiene sobrepeso");
+  });
+
+  it('Should print "Usted tiene obesidad" when edad=12 and IMC=23.6', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(12, 23.6);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad");
+  });
+
+  it('Should print "Usted tiene bajo peso" when edad=13 and IMC=14.9', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(13, 14.9);
+    //Assert
+    expect(result).toBe("Usted tiene bajo peso");
+  });
+
+  it('Should print "Usted tiene un peso normal" when edad=13 and IMC=15.9', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(13, 15.9);
+    //Assert
+    expect(result).toBe("Usted tiene un peso normal");
+  });
+
+  it('Should print "Usted tiene sobrepeso" when edad=13 and IMC=24.2', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(13, 24.2);
+    //Assert
+    expect(result).toBe("Usted tiene sobrepeso");
+  });
+
+  it('Should print "Usted tiene obesidad" when edad=13 and IMC=24.8', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(13, 24.8);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad");
+  });
+
+  it('Should print "Usted tiene bajo peso" when edad=14 and IMC=15.5', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(14, 15.5);
+    //Assert
+    expect(result).toBe("Usted tiene bajo peso");
+  });
+
+  it('Should print "Usted tiene un peso normal" when edad=14 and IMC=18.3', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(14, 18.3);
+    //Assert
+    expect(result).toBe("Usted tiene un peso normal");
+  });
+
+  it('Should print "Usted tiene sobrepeso" when edad=14 and IMC=22.9', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(14, 22.9);
+    //Assert
+    expect(result).toBe("Usted tiene sobrepeso");
+  });
+
+  it('Should print "Usted tiene obesidad" when edad=14 and IMC=25.9', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(14, 25.9);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad");
+  });
+
+  it('Should print "Usted tiene bajo peso" when edad=15 and IMC=16', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(15, 16);
+    //Assert
+    expect(result).toBe("Usted tiene bajo peso");
+  });
+
+  it('Should print "Usted tiene un peso normal" when edad=15 and IMC=21.5', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(15, 21.5);
+    //Assert
+    expect(result).toBe("Usted tiene un peso normal");
+  });
+
+  it('Should print "Usted tiene sobrepeso" when edad=15 and IMC=23.6', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(15, 23.6);
+    //Assert
+    expect(result).toBe("Usted tiene sobrepeso");
+  });
+
+  it('Should print "Usted tiene obesidad" when edad=15 and IMC=27', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(15, 27);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad");
+  });
+
+  it('Should print "Usted tiene bajo peso" when edad=16 and IMC=16.5', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(16, 16.5);
+    //Assert
+    expect(result).toBe("Usted tiene bajo peso");
+  });
+
+  it('Should print "Usted tiene un peso normal" when edad=16 and IMC=20.9', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(16, 20.9);
+    //Assert
+    expect(result).toBe("Usted tiene un peso normal");
+  });
+
+  it('Should print "Usted tiene sobrepeso" when edad=16 and IMC=25.1', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(16, 25.1);
+    //Assert
+    expect(result).toBe("Usted tiene sobrepeso");
+  });
+
+  it('Should print "Usted tiene obesidad" when edad=16 and IMC=27.9', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(16, 27.9);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad");
+  });
+
+  it('Should print "Usted tiene bajo peso" when edad=17 and IMC=16.9', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(17, 16.9);
+    //Assert
+    expect(result).toBe("Usted tiene bajo peso");
+  });
+
+  it('Should print "Usted tiene un peso normal" when edad=17 and IMC=17.9', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(17, 17.9);
+    //Assert
+    expect(result).toBe("Usted tiene un peso normal");
+  });
+
+  it('Should print "Usted tiene obesidad" when edad=17 and IMC=28.6', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(17, 28.6);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad");
+  });
+
+  it('Should print "Usted tiene sobrepeso" when edad=17 and IMC=25.3', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(17, 25.3);
+    //Assert
+    expect(result).toBe("Usted tiene sobrepeso");
+  });
+
+  it('Should print "Usted tiene bajo peso" when edad=18 and IMC=17.3', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(18, 17.3);
+    //Assert
+    expect(result).toBe("Usted tiene bajo peso");
+  });
+
+  it('Should print "Usted tiene un peso normal" when edad=18 and IMC=24.7', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(18, 24.7);
+    //Assert
+    expect(result).toBe("Usted tiene un peso normal");
+  });
+
+  it('Should print "Usted tiene obesidad" when edad=18 and IMC=29.2', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(18, 29.2);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad");
+  });
+
+  it('Should print "Usted tiene sobrepeso" when edad=18 and IMC=28.1', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(18, 28.1);
+    //Assert
+    expect(result).toBe("Usted tiene sobrepeso");
+  });
+
+  it('Should print "Usted tiene bajo peso" when edad=19 and IMC=17.6', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(19, 17.6);
+    //Assert
+    expect(result).toBe("Usted tiene bajo peso");
+  });
+
+  it('Should print "Usted tiene un peso normal" when edad=19 and IMC=24.9', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(19, 24.9);
+    //Assert
+    expect(result).toBe("Usted tiene un peso normal");
+  });
+
+  it('Should print "Usted tiene obesidad" when edad=19 and IMC=29.7', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(19, 29.7);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad");
+  });
+
+  it('Should print "Usted tiene sobrepeso" when edad=19 and IMC=26.8', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(19, 26.8);
+    //Assert
+    expect(result).toBe("Usted tiene sobrepeso");
+  });
+
+  it('Should print "Usted tiene bajo peso" when edad=23 and IMC=18', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(23, 18);
+    //Assert
+    expect(result).toBe("Usted tiene bajo peso");
+  });
+
+  it('Should print "Usted tiene un peso normal" when edad=22 and IMC=24', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(22, 24);
+    //Assert
+    expect(result).toBe("Usted tiene un peso normal");
+  });
+
+  it('Should print "Usted tiene sobrepeso" when edad=31 and IMC=26', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(31, 26);
+    //Assert
+    expect(result).toBe("Usted tiene sobrepeso");
+  });
+
+  it('Should print "Usted tiene obesidad tipo I" when edad=38 and IMC=33', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(38, 33);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad tipo I");
+  });
+
+  it('Should print "Usted tiene obesidad tipo II" when edad=44 and IMC=38.2', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(44, 38.2);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad tipo II");
+  });
+
+  it('Should print "Usted tiene obesidad tipo III" when edad=32 and IMC=50.6', () => {
+    //Arrangin
+    //test
+    let result = '';
+    //Act
+    result = diagnosticoHombre(27, 50.6);
+    //Assert
+    expect(result).toBe("Usted tiene obesidad tipo III");
+  });
 
 });

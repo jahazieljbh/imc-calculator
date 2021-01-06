@@ -6,14 +6,10 @@
 </head>
 
 <body>
-    <div align="center">
 
-    </div>
+    <div class="ui-box ">
 
-
-    <div class="ui-box">
-
-        <h1>IMC</h1>
+        <h1>IMC CALCULADORA</h1>
         <form>
             <!-- ESTATURA  -->
             <label for="estatura">Estatura (cm)</label>
@@ -29,19 +25,22 @@
             <label for="genero">Genero</label>
             <input id="genero" [(ngModel)]="genero" type="text" class="form-control genero" name="genero"
                 placeholder="hombre/mujer">
+            <p><input class="enviarDatos-button btn btn-success" type="submit" (click)="calcularIMC()" value="Calcular tu IMC"></p>
+            <p><input class="save-imc-button btn btn-info" type="submit" (click)="saveimc()" value="Guardar IMC"></p>
+            <label for="textarea">Resultado Obtenido: </label>
+            <p><textarea name="textarea" > {{result}}</textarea></p>
         </form>
-        <form action="../../form-result.php" method="post" target="_blank">
-            <p><input class="enviarDatos-button" type="submit" (click)="calcularIMC()" value="Enviar datos"></p>
-            <textarea name="textarea" align="center" rows="4" readonly cols="60"> {{result}}</textarea>
-        </form>
+
         <form>
-            <div class="range" align="center">
+            <div>
                 <img src="rango.jpg" width="500px" height="60px" />
             </div>
-            <div class="hombre" align="center">
+            <p></p>
+            <div >
                 <img src="hombreT.jpg" width="500px" height="190px" />
             </div>
-            <div class="mujer" align="center">
+            <p></p>
+            <div >
                 <img src="mujerT.jpg" width="500px" height="190px" />
             </div>
         </form>

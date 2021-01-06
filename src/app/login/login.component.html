@@ -1,0 +1,29 @@
+<html lang="en">
+
+<body>
+    <div class="calculator col-md-4 form-control ">
+        <h4 class="card-title text-center">Iniciar Sesión</h4>
+        <p></p>
+        <div *ngIf="isLoginFailed" class="alert alert-danger">
+            {{errorMessage}}
+        </div>
+        <form>
+            <div class="input-group form-group">
+                <span class="input-group-addon input-group-text"><i class="fa fa-user-o"></i></span>
+                <input id="username" [(ngModel)]="username" type="text" class="form-control operator1" name="operator1"
+                    placeholder="Nombre de Usuario" required />
+            </div>
+            <p></p>
+            <div class="input-group form-group">
+                <span class="input-group-addon input-group-text"><i class="fa fa-key"></i></span>
+                <input id="password" [(ngModel)]="password" type="password" class="form-control operator2"
+                    name="operator2" placeholder="Contraseña" required />
+            </div>
+        </form>
+        <p></p>
+        <div class="form-group">
+            <button class="btn btn-primary login-button" (click)="logIn()">Iniciar sesión</button>
+            
+        </div>
+    </div>
+</body>

@@ -1,0 +1,42 @@
+<html lang="en">
+
+<body>
+    <div class="body col-md-4 form-control card-body">
+        <h4 class="card-title text-center">Regístrate</h4>
+        <p></p>
+        <div *ngIf="isSignUpFailed" class="alert alert-warning">
+            Signup<br/>{{errorMessage}}
+        </div>
+        <form>
+            <div class="input-group form-group ">
+                <span class="input-group-addon input-group-text"><i class="fa fa-user-o"></i></span>
+                <input id="name" [(ngModel)]="name" type="text" class="form-control name" name="name"
+                    placeholder="Tu Nombre">
+            </div>
+            <p></p>
+            <div class="input-group form-group">
+                <span class="input-group-addon input-group-text"><i class="fa fa-user-o"></i></span>
+                <input id="username" [(ngModel)]="username" type="text" class="form-control username" name="username"
+                    placeholder="Nombre de Usuario">
+            </div>
+            <p></p>
+            <div class="input-group form-group">
+                <span class="input-group-addon input-group-text"><i class="fa fa-envelope-o"></i></span>
+                <input id="email" [(ngModel)]="email" type="text" class="form-control email" name="email"
+                    placeholder="Dirección de correo electrónico">
+            </div>
+            <p></p>
+            <div class="input-group form-group">
+                <span class="input-group-addon input-group-text"><i class="fa fa-key"></i></span>
+                <input id="password" [(ngModel)]="password" type="password" class="form-control password"
+                    name="password" placeholder="Contraseña">
+            </div>
+            <p></p>
+            <div class="form-group">
+                <button class="btn btn-primary button" (click)="registar()">Registrarse</button>
+                <a routerLink="/login" class="btn btn-link">Ya tengo mi cuenta</a>
+            </div>
+        </form>
+
+    </div>
+</body>
