@@ -3,11 +3,11 @@ import { By } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StorageService } from "../../services/storage.service";
 import { AppRoutingModule } from '../app-routing.module';
-import { UsersService } from "../../services/users.service";
-import { UserApi } from "../../models/usersapi";
-
+import { NgxSpinnerModule } from "ngx-spinner";
+import { StorageService } from '../services/storage.service';
+import { UsersService } from '../services/users.service';
+import { ImcService } from '../services/imc.service';
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
@@ -17,11 +17,13 @@ describe('LoginComponent', () => {
       imports: [
         HttpClientModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        NgxSpinnerModule
       ],
       providers: [
         StorageService,
-        UsersService
+        UsersService,
+        ImcService
       ]
     })
       .compileComponents();
@@ -37,7 +39,7 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  xit('Should set username model through ngModel sign in', async () => {
+  it('Should set username model through ngModel sign in', async () => {
     // Arrange 
     await fixture.whenStable();
     fixture.detectChanges();
@@ -50,7 +52,7 @@ describe('LoginComponent', () => {
     expect(component.username).toEqual('jahaziel');
   });
 
-  xit('Should set password model through ngModel sign in', async () => {
+  it('Should set password model through ngModel sign in', async () => {
     // Arrange 
     await fixture.whenStable();
     fixture.detectChanges();
@@ -67,7 +69,7 @@ describe('LoginComponent', () => {
 
     // Arrange
     let isLoginFailed;
-    component.username = 'jahaziel';
+    component.username = 'JAHAZIELBASILIOHERNANDEZ';
     component.password = '123456789';
     // Act
     component.logIn();
@@ -86,8 +88,10 @@ describe('LoginComponent', () => {
     component.logIn();
     res = component.result;
 
+
     // Assert
     expect(res).toBe("isEmpty");
+    expect(component.errorMessage).toBe('');
   });
 
 });

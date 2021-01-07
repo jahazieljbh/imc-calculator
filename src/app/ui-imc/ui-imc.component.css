@@ -34,10 +34,9 @@ body {
  
   
 .ui-box input {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     column-width: 10px;
     color: rgb(255, 255, 255);
-
 }
   
 .ui-box input[type="number"], .ui-box input[type="text"] {
@@ -72,16 +71,8 @@ body {
     border: none;
     padding: 12px 30px;
     text-decoration: none;
-    
 }
-  
-textarea{
-    text-align: center;
-    resize : none;
-    color: rgb(8, 2, 2);
-    padding: 6%;
-    width: 500px;
-}
+
 .rango{
     background: url(rango.jpg);
     background-size: 100% 100%;
@@ -96,5 +87,4 @@ textarea{
 ::placeholder {
     color: rgb(255, 255, 255);
     opacity: 0.7;
-  }
-
+}

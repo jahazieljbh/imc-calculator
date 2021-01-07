@@ -1,9 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { StorageService } from "../../services/storage.service";
 import { AppRoutingModule } from '../app-routing.module';
 import { HomeComponent } from './home.component';
-
+import { StorageService } from '../services/storage.service';
+import { ImcService } from '../services/imc.service';
+import { UsersService } from '../services/users.service';
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
@@ -11,8 +12,8 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HomeComponent ],
-      providers:[StorageService],
-      imports: [HttpClientModule, AppRoutingModule]
+      imports: [HttpClientModule, AppRoutingModule],
+      providers:[StorageService, UsersService, ImcService]
     })
     .compileComponents();
   });

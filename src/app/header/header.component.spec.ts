@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { StorageService } from "../../services/storage.service";
 import { HeaderComponent } from './header.component';
 import { By } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
+import { StorageService } from '../services/storage.service';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;

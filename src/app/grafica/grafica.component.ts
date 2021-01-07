@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ImcService } from "../../services/imc.service"
-import { ImcApi } from "../../models/imcapi";
+import { ImcApi } from "../models/imcapi";
 import { Chart } from "chart.js";
+import { ImcService } from '../services/imc.service';
+import { UsersService } from '../services/users.service';
 @Component({
   selector: 'app-grafica',
   templateUrl: './grafica.component.html',
@@ -11,7 +12,7 @@ export class GraficaComponent implements OnInit {
 
   chart = [];
 
-  constructor(private imcService: ImcService) { }
+  constructor(private imcService: ImcService, public usersService: UsersService) { }
 
   ngOnInit() {
     this.imcService.getGrafica().subscribe(res => {
@@ -55,6 +56,8 @@ export class GraficaComponent implements OnInit {
           }
         }
       });
+    }, error => {
+      console.log(error);
     });
   }
 }

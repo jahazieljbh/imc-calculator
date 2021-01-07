@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from 'src/services/storage.service';
+import { StorageService } from '../services/storage.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,11 @@ import { StorageService } from 'src/services/storage.service';
 })
 export class HomeComponent implements OnInit {
   info: any;
-  constructor(private storageService: StorageService) { }
+  constructor(private storageService: StorageService, public usersService: UsersService) { }
 
   ngOnInit(): void {
     this.info = {
-    //  token: this.storageService.getSession("token"),
+      token: this.storageService.getSession("token"),
       id: this.storageService.getId("id"),
       email: this.storageService.getEmail("email"),
       username: this.storageService.getUsername("username"),

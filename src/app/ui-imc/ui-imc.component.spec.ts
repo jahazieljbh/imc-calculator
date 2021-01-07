@@ -3,8 +3,9 @@ import { By } from '@angular/platform-browser';
 import { UiImcComponent } from './ui-imc.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { StorageService } from "../../services/storage.service";
-import { ImcApi } from "../../models/imcapi";
+import { StorageService } from '../services/storage.service';
+import { ImcService } from '../services/imc.service';
+import { UsersService } from '../services/users.service';
 
 describe('UiImcComponent', () => {
   let component: UiImcComponent;
@@ -14,7 +15,7 @@ describe('UiImcComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ UiImcComponent ],
       imports: [FormsModule, HttpClientModule],
-      providers:[StorageService]
+      providers:[StorageService,ImcService, UsersService]
     })
     .compileComponents();
   });
@@ -134,4 +135,14 @@ describe('UiImcComponent', () => {
     expect(component.result).toBe('IMC: 19.78\nDiagnostico: INVALIDO');
 
   });
+
+  it('Should call method saveimc', ()=>{
+    // Arrange
+    let result;
+    // Act
+    component.saveimc();
+    result = component.response;
+    // Assert
+    expect(result).toBe(false);
+  })
 });
