@@ -1,21 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UiImcComponent } from './ui-imc/ui-imc.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from '@angular/common/http';
-import { StorageService } from "../services/storage.service";
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { UsersService } from "../services/users.service";
 import { HistorialComponent } from './historial/historial.component'
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ImcService } from 'src/services/imc.service';
 import { GraficaComponent } from './grafica/grafica.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { StorageService } from './services/storage.service';
+import { UsersService } from './services/users.service';
+import { ImcService } from './services/imc.service';
+import { InterceptorService } from './services/interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -33,9 +36,11 @@ import { GraficaComponent } from './grafica/grafica.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
-  providers: [StorageService, UsersService, ImcService],
+  providers: [StorageService, UsersService, ImcService, {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

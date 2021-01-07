@@ -1,8 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { StorageService } from "../../services/storage.service";
 import { AppRoutingModule } from '../app-routing.module';
 import { GraficaComponent } from './grafica.component';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { StorageService } from '../services/storage.service';
+import { ImcService } from '../services/imc.service';
+import { UsersService } from '../services/users.service';
 
 describe('GraficaComponent', () => {
   let component: GraficaComponent;
@@ -11,8 +14,8 @@ describe('GraficaComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [GraficaComponent],
-      imports: [HttpClientModule, AppRoutingModule],
-      providers: [StorageService]
+      imports: [HttpClientModule, AppRoutingModule, NgxSpinnerModule],
+      providers: [StorageService, ImcService, UsersService]
     })
       .compileComponents();
   });

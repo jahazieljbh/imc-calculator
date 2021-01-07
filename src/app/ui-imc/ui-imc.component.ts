@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {calcularIMC} from '../hombre/hombre';
 import {diagnosticoHombre} from '../hombre/hombre';
 import {diagnosticoMujer} from '../mujer/mujer';
-import { ImcApi } from "../../models/imcapi";
-import { ImcService } from "../../services/imc.service"
-import { StorageService } from "../../services/storage.service";
+import { ImcApi } from "../models/imcapi";
+import { ImcService } from '../services/imc.service';
+import { StorageService } from '../services/storage.service';
+import { UsersService } from '../services/users.service';
+
 @Component({
   selector: 'app-ui-imc',
   templateUrl: './ui-imc.component.html',
@@ -13,7 +15,7 @@ import { StorageService } from "../../services/storage.service";
 export class UiImcComponent implements OnInit {
 
   constructor(private imcService : ImcService,
-    private storageService: StorageService){ }
+    private storageService: StorageService, public usersService: UsersService){ }
 
   result = '';
   estatura = 0;
@@ -22,7 +24,9 @@ export class UiImcComponent implements OnInit {
   genero='';
   myimc = 0;
   userId: any;
-
+  response = false;
+  calculo = false;
+  
   ngOnInit(): void {
     this.userId = this.storageService.getId("id");
   }
@@ -40,9 +44,8 @@ export class UiImcComponent implements OnInit {
     }
     Resultado = `IMC: ${this.myimc.toFixed(2)}\nDiagnostico: ${myresultTxt}`
     this.result = Resultado;
+    this.calculo = true;
   }
-
-  
 
   saveimc() {
     var imc = new ImcApi;
@@ -51,11 +54,12 @@ export class UiImcComponent implements OnInit {
 
   	return this.imcService.createImc(imc)
 		 .subscribe((data: any) => {
-			alert(JSON.stringify(data));
-
-		})
-
+      this.response = true;
+    },
+    error =>{
+      console.log(error);
+      this.response = false;
+    })
   }
   
-
 }
